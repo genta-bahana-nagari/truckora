@@ -1,9 +1,9 @@
-import React from 'react'
-
-const Footer = () => {
+export default function Footer() {
   return (
-    <div>Footer</div>
+    <footer className="w-full border-t mt-20">
+      <div className="mx-auto max-w-7xl px-6 py-6 text-sm">
+        © Truck Marketplace
+      </div>
+    </footer>
   )
 }
-
-export default Footer

@@ -1,9 +1,9 @@
-import React from 'react'
-
-const Navbar = () => {
+export default function Navbar() {
   return (
-    <div>Navbar</div>
+    <nav className="w-full border-b">
+      <div className="mx-auto max-w-7xl px-6 py-4">
+        Truck Marketplace
+      </div>
+    </nav>
   )
 }
-
-export default Navbar
