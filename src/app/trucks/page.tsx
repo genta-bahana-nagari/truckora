@@ -1,9 +1,11 @@
-import React from 'react'
+"use client";
 
-const Trucks = () => {
+export default function Trucks() {
   return (
-    <div>Trucks</div>
-  )
+    <section className="py-24">
+      <div>
+        <h1 className="text-5xl font-bold">Trucks List</h1>
+      </div>
+    </section>
+  );
 }
-
-export default Trucks
