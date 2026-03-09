@@ -14,14 +14,11 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-900 text-gray-300 mt-20">
       <div className="max-w-screen-xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-4">
-
         <div>
-          <h2 className="text-xl font-bold text-white mb-4">
-            TruckReserve
-          </h2>
+          <h2 className="text-xl font-bold text-white mb-4">Truckora</h2>
           <p className="text-sm leading-relaxed">
-            TruckReserve helps businesses and individuals easily find and
-            reserve trucks for logistics, transportation, and moving services.
+            Truckora helps businesses and individuals easily find and reserve
+            trucks for logistics, transportation, and moving services.
           </p>
 
           <div className="flex gap-4 mt-5 text-xl">
@@ -44,9 +41,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-white font-semibold mb-4">
-            Quick Links
-          </h3>
+          <h3 className="text-white font-semibold mb-4">Quick Links</h3>
 
           <ul className="space-y-3 text-sm">
             <li>
@@ -76,9 +71,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-white font-semibold mb-4">
-            Company
-          </h3>
+          <h3 className="text-white font-semibold mb-4">Company</h3>
 
           <ul className="space-y-3 text-sm">
             <li>
@@ -108,9 +101,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-white font-semibold mb-4">
-            Support
-          </h3>
+          <h3 className="text-white font-semibold mb-4">Support</h3>
 
           <ul className="space-y-3 text-sm">
             <li>
@@ -142,7 +133,6 @@ export default function Footer() {
 
       <div className="border-t border-neutral-700">
         <div className="max-w-screen-xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-
           <div className="flex gap-4 text-2xl">
             <FaCcVisa />
             <FaCcMastercard />
@@ -151,9 +141,8 @@ export default function Footer() {
           </div>
 
           <p className="text-sm text-gray-400 text-center">
-            © {new Date().getFullYear()} TruckReserve. All rights reserved.
+            © {new Date().getFullYear()} Truckora. All rights reserved.
           </p>
-
         </div>
       </div>
     </footer>

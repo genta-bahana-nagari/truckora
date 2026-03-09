@@ -38,12 +38,17 @@ export default function Navbar() {
           href="/"
           className="text-xl font-bold tracking-tight text-heading"
         >
-          TruckReserve
+          Truckora
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {menu.map(({ name, href, icon: Icon }) => (
-            <Link key={href} href={href} className={linkStyle(href)} onClick={() => setOpen(false)}>
+            <Link
+              key={href}
+              href={href}
+              className={linkStyle(href)}
+              onClick={() => setOpen(false)}
+            >
               <Icon size={20} />
               {name}
             </Link>
