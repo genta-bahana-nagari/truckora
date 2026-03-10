@@ -1,6 +1,5 @@
 import Hero from "@/components/sections/home/Hero";
 import About from "@/components/sections/home/About";
-import QuickBooking from "@/components/sections/home/QuickBooking";
 import TruckCategories from "@/components/sections/home/TruckCategories";
 import Featured from "@/components/sections/home/Featured";
 import WhyChooseUs from "@/components/sections/home/WhyChooseUs";
@@ -13,7 +12,6 @@ export default function Home() {
     <>
       <Hero />
       <About />
-      <QuickBooking />
       <TruckCategories />
       <Featured />
       <WhyChooseUs />
