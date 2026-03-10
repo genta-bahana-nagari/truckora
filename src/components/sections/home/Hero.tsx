@@ -50,7 +50,7 @@ export default function HeroSection() {
 
             <div className="absolute inset-0 bg-black/40" />
 
-            <div className="absolute inset-0 flex items-center">
+            <div className="absolute inset-0 flex items-center md:px-24">
               <div className="max-w-xl px-6 md:px-12 text-white">
                 <h1 className="text-2xl md:text-4xl font-bold mb-4">
                   {slide.title}
@@ -60,13 +60,13 @@ export default function HeroSection() {
                 </p>
 
                 <div className="flex gap-4">
-                  <button className="bg-brand text-white px-5 py-2 rounded-lg font-medium hover:bg-brand-strong transition">
+                  <a href="/reserve" className="bg-brand text-white px-5 py-2 rounded-lg font-medium hover:bg-brand-strong transition">
                     Reserve Truck
-                  </button>
+                  </a>
 
-                  <button className="border border-white text-white px-5 py-2 rounded-lg font-medium hover:bg-white hover:text-black transition">
+                  <a href="trucks" className="border border-white text-white px-5 py-2 rounded-lg font-medium transition hover:bg-white hover:text-black">
                     Browse Trucks
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
