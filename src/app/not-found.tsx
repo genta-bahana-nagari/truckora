@@ -1,3 +1,7 @@
+"use effect";
+
+import Link from "next/link";
+
 const NotFound = () => {
   return (
     <main className="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -10,15 +14,15 @@ const NotFound = () => {
           Sorry, we couldn’t find the page you’re looking for.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
-          <a
-            href="#"
+          <Link
+            href="/"
             className="rounded-md bg-gray-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-gray-800 transition duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-700"
           >
             Go back home
-          </a>
-          <a href="#" className="text-sm font-semibold text-gray-900">
+          </Link>
+          <Link href="/help" className="text-sm font-semibold text-gray-900">
             Contact support <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </div>
     </main>

@@ -32,7 +32,7 @@ export default function HeroSection() {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
 
   return (
-    <section className="relative w-full">
+    <section id="hero" className="relative w-full">
       <div className="relative w-full h-[65vh] md:h-auto md:aspect-[21/9] overflow-hidden">
         {slides.map((slide, index) => (
           <div
@@ -53,7 +53,7 @@ export default function HeroSection() {
 
             <div className="absolute inset-0 flex items-end md:items-center md:px-24 pb-12 md:pb-0">
               <div className="max-w-md md:max-w-xl px-5 md:px-12 text-white">
-                <h1 className="text-xl sm:text-2xl md:text-4xl font-bold mb-2 md:mb-4">
+                <h1 className="text-xl sm:text-2xl md:text-5xl font-bold mb-2 md:mb-4">
                   {slide.title}
                 </h1>
                 <p className="text-xs sm:text-sm md:text-lg mb-3 md:mb-6 text-white/90">
