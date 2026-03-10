@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 
 const slides = [
   {
@@ -60,11 +61,17 @@ export default function HeroSection() {
                 </p>
 
                 <div className="flex gap-4">
-                  <a href="/reserve" className="bg-brand text-white px-5 py-2 rounded-lg font-medium hover:bg-brand-strong transition">
+                  <a
+                    href="/reserve"
+                    className="border border-white bg-brand text-white px-5 py-2 rounded-lg font-medium hover:bg-gray-200 hover:text-black transition"
+                  >
                     Reserve Truck
                   </a>
 
-                  <a href="trucks" className="border border-white text-white px-5 py-2 rounded-lg font-medium transition hover:bg-white hover:text-black">
+                  <a
+                    href="trucks"
+                    className="border border-white bg-white text-black px-5 py-2 rounded-lg font-medium transition hover:bg-gray-200"
+                  >
                     Browse Trucks
                   </a>
                 </div>
@@ -75,19 +82,19 @@ export default function HeroSection() {
 
         <button
           onClick={prev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 rounded-full"
+          className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 rounded-full"
         >
-          ‹
+          <MdNavigateBefore />
         </button>
 
         <button
           onClick={next}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 rounded-full"
+          className="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 rounded-full"
         >
-          ›
+          <MdNavigateNext />
         </button>
 
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-3">
+        <div className="absolute bottom-4 left-1/2 translate-x-1/2 flex gap-3">
           {slides.map((_, i) => (
             <button
               key={i}
