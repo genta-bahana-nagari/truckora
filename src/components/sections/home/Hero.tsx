@@ -38,7 +38,7 @@ export default function HeroSection() {
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-700 ${
-              index === current ? "opacity-100" : "opacity-0"
+              index === current ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
             }`}
           >
             <Image
@@ -48,8 +48,6 @@ export default function HeroSection() {
               priority={index === 0}
               className="object-cover"
             />
-
-            <div className="absolute inset-0 bg-black/40" />
 
             <div className="absolute inset-0 flex items-end md:items-center md:px-24 pb-12 md:pb-0">
               <div className="max-w-md md:max-w-xl px-5 md:px-12 text-white">
@@ -63,14 +61,14 @@ export default function HeroSection() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <a
                     href="/reserve"
-                    className="border border-white bg-brand text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-gray-200 hover:text-black transition"
+                    className="border border-white bg-black/20 text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-gray-200 hover:text-black transition duration-300"
                   >
                     Reserve Truck
                   </a>
 
                   <a
                     href="trucks"
-                    className="border border-white bg-white text-black px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium transition hover:bg-gray-200"
+                    className="border border-gray-200 bg-gray-200 text-black px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-black/20 hover:text-white transition duration-300"
                   >
                     Browse Trucks
                   </a>
