@@ -20,7 +20,7 @@ const NotFound = () => {
           >
             Go back home
           </Link>
-          <Link href="/help" className="text-sm font-semibold text-gray-900">
+          <Link href="/company/help" className="text-sm font-semibold text-gray-900">
             Contact support <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
