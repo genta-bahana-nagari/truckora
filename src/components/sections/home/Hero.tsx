@@ -32,13 +32,18 @@ export default function HeroSection() {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
 
   return (
-    <section id="hero" className="relative w-full">
+    <section
+      id="hero"
+      className="relative isolate overflow-hidden justify-center bg-white py-24 sm:py-32"
+    >
       <div className="relative w-full h-[65vh] md:h-auto md:aspect-[21/9] overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-700 ${
-              index === current ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+              index === current
+                ? "pointer-events-auto opacity-100"
+                : "pointer-events-none opacity-0"
             }`}
           >
             <Image

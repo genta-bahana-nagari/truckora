@@ -5,7 +5,7 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us"
-      className="relative isolate overflow-hidden justify-center bg-white py-24 sm:py-32"
+      className="relative isolate overflow-hidden justify-center bg-white py-20 sm:py-26"
     >
       <div className="mx-auto max-w-3xl md:max-w-7xl px-6 lg:px-8">
         <h2 className="mx-auto mt-2 text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">

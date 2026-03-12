@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative isolate overflow-hidden justify-center bg-white py-24 sm:py-32"
+      className="relative isolate overflow-hidden justify-center bg-white py-20 sm:py-26"
     >
       <div className="justify-center text-center mx-auto max-w-3xl">
         <h2 className="text-xl sm:text-2xl md:text-5xl font-semibold tracking-tight text-gray-900">
