@@ -30,19 +30,19 @@ export default function Featured() {
             <div
               key={truck.id}
               onClick={() => setSelectedTruck(truck)}
-              className="group relative cursor-pointer"
+              className="group relative cursor-pointer rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:ring-2 hover:ring-black/5 transition-all duration-200"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200">
+              <div className="aspect-square w-full overflow-hidden rounded-t-2xl bg-gray-200">
                 <Image
                   src={truck.image}
                   alt={truck.name}
                   width={400}
                   height={400}
-                  className="h-full w-full object-cover object-center group-hover:opacity-75"
+                  className="h-full w-full object-cover object-center group-hover:opacity-90 transition-opacity duration-200"
                 />
               </div>
 
-              <div className="mt-4">
+              <div className="mt-4 px-2 pb-4">
                 <h3 className="text-md font-medium text-gray-900">
                   {truck.name}
                 </h3>
