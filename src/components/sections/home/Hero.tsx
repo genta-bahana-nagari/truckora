@@ -32,13 +32,18 @@ export default function HeroSection() {
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
 
   return (
-    <section className="relative w-full">
-      <div className="relative w-full aspect-video md:aspect-[21/9] overflow-hidden">
+    <section
+      id="hero"
+      className="relative isolate overflow-hidden justify-center bg-white py-24 sm:py-32"
+    >
+      <div className="relative w-full h-[65vh] md:h-auto md:aspect-[21/9] overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-700 ${
-              index === current ? "opacity-100" : "opacity-0"
+              index === current
+                ? "pointer-events-auto opacity-100"
+                : "pointer-events-none opacity-0"
             }`}
           >
             <Image
@@ -49,28 +54,26 @@ export default function HeroSection() {
               className="object-cover"
             />
 
-            <div className="absolute inset-0 bg-black/40" />
-
-            <div className="absolute inset-0 flex items-center md:px-24">
-              <div className="max-w-xl px-6 md:px-12 text-white">
-                <h1 className="text-2xl md:text-4xl font-bold mb-4">
+            <div className="absolute inset-0 flex items-end md:items-center md:px-24 pb-12 md:pb-0">
+              <div className="max-w-md md:max-w-xl px-5 md:px-12 text-white">
+                <h1 className="text-xl sm:text-2xl md:text-5xl font-bold mb-2 md:mb-4">
                   {slide.title}
                 </h1>
-                <p className="text-sm md:text-lg mb-6 text-white/90">
+                <p className="text-xs sm:text-sm md:text-lg mb-3 md:mb-6 text-white/90">
                   {slide.description}
                 </p>
 
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <a
                     href="/reserve"
-                    className="border border-white bg-brand text-white px-5 py-2 rounded-lg font-medium hover:bg-gray-200 hover:text-black transition"
+                    className="border border-white bg-black/20 text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-gray-200 hover:text-black transition duration-300"
                   >
                     Reserve Truck
                   </a>
 
                   <a
                     href="trucks"
-                    className="border border-white bg-white text-black px-5 py-2 rounded-lg font-medium transition hover:bg-gray-200"
+                    className="border border-gray-200 bg-gray-200 text-black px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-black/20 hover:text-white transition duration-300"
                   >
                     Browse Trucks
                   </a>
@@ -82,24 +85,24 @@ export default function HeroSection() {
 
         <button
           onClick={prev}
-          className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 rounded-full"
+          className="cursor-pointer absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-1.5 md:p-2 rounded-full"
         >
           <MdNavigateBefore />
         </button>
 
         <button
           onClick={next}
-          className="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-2 rounded-full"
+          className="cursor-pointer absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-1.5 md:p-2 rounded-full"
         >
           <MdNavigateNext />
         </button>
 
-        <div className="absolute bottom-4 left-1/2 translate-x-1/2 flex gap-3">
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`w-3 h-3 rounded-full ${
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full ${
                 i === current ? "bg-white" : "bg-white/40"
               }`}
             />

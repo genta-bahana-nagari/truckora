@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 import {
@@ -48,9 +49,15 @@ export default function Navbar() {
       <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-heading"
+          className="flex items-center gap-2 text-xl font-bold tracking-tight text-heading"
         >
-          Truckora
+          <Image
+            src="/icon-circle.png"
+            alt="Truckora"
+            width={40}
+            height={40}
+          />
+          <span>Truckora</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
