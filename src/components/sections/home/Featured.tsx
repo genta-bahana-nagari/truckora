@@ -1,52 +1,114 @@
-const features = [
-  {
-    name: 'Push to deploy.',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    
-  },
-  {
-    name: 'SSL certificates.',
-    description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-    
-  },
-  {
-    name: 'Database backups.',
-    description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-    
-  },
-]
+"use client";
+
+import { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import Image from "next/image";
+
+import { trucks } from "@/data/trucks";
+import { TruckListing } from "@/types/truckType";
 
 export default function Featured() {
+  const [selectedTruck, setSelectedTruck] = useState<TruckListing | null>(null);
+
+  const featuredTrucks = trucks.slice(0, 4);
+
   return (
-    <section id="featured" className="overflow-hidden bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          <div className="lg:pt-4 lg:pr-8">
-            <div className="lg:max-w-lg">
-              <h2 className="text-base/7 font-semibold text-gray-700">Deploy faster</h2>
-              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-                A better workflow
-              </p>
-              <p className="mt-6 text-lg/8 text-gray-700">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                iste dolor cupiditate blanditiis ratione.
-              </p>
-              <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
-                {features.map((feature) => (
-                  <div key={feature.name} className="relative pl-9">
-                    <dt className="inline font-semibold text-gray-900">
-                      {/* <feature.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-indigo-600" /> */}
-                      {feature.name}
-                    </dt>{' '}
-                    <dd className="inline">{feature.description}</dd>
-                  </div>
-                ))}
-              </dl>
+    <section
+      id="featured"
+      className="relative isolate overflow-hidden justify-center bg-white py-24 sm:py-32"
+    >
+      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Our Available Fleet
+          </h2>
+          <p className="mt-4 text-lg text-gray-600">Assasasa</p>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+          {featuredTrucks.map((truck) => (
+            <div
+              key={truck.id}
+              onClick={() => setSelectedTruck(truck)}
+              className="group relative cursor-pointer"
+            >
+              <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200">
+                <Image
+                  src={truck.image}
+                  alt={truck.name}
+                  width={400}
+                  height={400}
+                  className="h-full w-full object-cover object-center group-hover:opacity-75"
+                />
+              </div>
+
+              <div className="mt-4">
+                <h3 className="text-md font-medium text-gray-900">
+                  {truck.name}
+                </h3>
+                <p className="text-sm text-gray-500">{truck.brand}</p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
+
+      <Dialog
+        open={!!selectedTruck}
+        onClose={() => setSelectedTruck(null)}
+        className="relative z-50"
+      >
+        <div className="fixed inset-0 bg-black/40" />
+
+        <div className="fixed inset-0 flex items-center justify-center p-4">
+          <Dialog.Panel className="w-full max-w-lg rounded-xl bg-white p-6">
+            {selectedTruck && (
+              <>
+                <Image
+                  src={selectedTruck.image}
+                  alt={selectedTruck.name}
+                  width={600}
+                  height={300}
+                  className="w-full h-56 object-cover rounded-lg"
+                />
+
+                <Dialog.Title className="mt-4 text-lg font-semibold">
+                  {selectedTruck.name}
+                </Dialog.Title>
+
+                <p className="text-gray-500">{selectedTruck.brand}</p>
+
+                <div className="mt-4 space-y-2 text-sm text-gray-600">
+                  <p>Category: {selectedTruck.category}</p>
+                  <p>Capacity: {selectedTruck.capacityTons} tons</p>
+                  <p>Transmission: {selectedTruck.transmission}</p>
+                  <p>Fuel: {selectedTruck.fuelType}</p>
+
+                  <p>
+                    Driver Included:{" "}
+                    {selectedTruck.driverIncluded ? "Yes" : "No"}
+                  </p>
+                  <p>
+                    Rating: ⭐ {selectedTruck.rating} ({selectedTruck.reviews}{" "}
+                    reviews)
+                  </p>
+                </div>
+
+                <p className="mt-4 text-lg font-semibold text-blue-600">
+                  ${selectedTruck.pricePerDay} / day
+                </p>
+
+                <button
+                  onClick={() => setSelectedTruck(null)}
+                  className="mt-6 w-full rounded-lg bg-gray-900 text-white py-2"
+                >
+                  Close
+                </button>
+              </>
+            )}
+          </Dialog.Panel>
+        </div>
+      </Dialog>
     </section>
-  )
+  );
 }

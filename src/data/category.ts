@@ -1,16 +1,10 @@
 import { categoryType } from "@/types/categoryType";
-import { FaTruckPickup } from "react-icons/fa";
 import { FaTruck, FaTrailer } from "react-icons/fa6";
 import { AiFillTruck } from "react-icons/ai";
 import { BsTruckFlatbed } from "react-icons/bs";
 import { GiMineTruck } from "react-icons/gi";
 
 export const category: categoryType[] = [
-  {
-    name: "Pickup Truck",
-    description: "Perfect for small cargo and city deliveries.",
-    icon: FaTruckPickup,
-  },
   {
     name: "Box Truck",
     description: "Ideal for moving furniture and large packages.",
