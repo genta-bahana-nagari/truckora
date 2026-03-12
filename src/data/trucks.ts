@@ -1,12 +1,5 @@
 import { TruckListing } from "@/types/truckType";
 
-const getTruckImage = (brand: string, name: string) => {
-  const brandSlug = brand.toLowerCase().replace(/\s+/g, "-");
-  const nameSlug = name.toLowerCase().replace(/\s+/g, "-");
-
-  return `/images/trucks/${brandSlug}/${nameSlug}.jpg`;
-};
-
 export const trucks: TruckListing[] = [
   {
     id: "truck-1",
