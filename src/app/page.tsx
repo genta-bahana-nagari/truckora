@@ -12,8 +12,8 @@ export default function Home() {
     <>
       <Hero />
       <About />
-      <TruckCategories />
       <Featured />
+      <TruckCategories />
       <WhyChooseUs />
       <HowItWorks />
       <Testimonials />
