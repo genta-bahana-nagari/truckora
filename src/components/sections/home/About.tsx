@@ -1,19 +1,7 @@
 "use client";
 import { MdKeyboardArrowRight } from "react-icons/md";
-
-const links = [
-  { name: "Browse Trucks", href: "/trucks" },
-  { name: "Reserve a Truck", href: "/reserve" },
-  { name: "How It Works", href: "/#how-it-works" },
-  { name: "Contact Us", href: "/contact" },
-];
-
-const stats = [
-  { name: "Trucks Available", value: "100+" },
-  { name: "Businesses Served", value: "1,200+" },
-  { name: "Reservations Completed", value: "8,500+" },
-  { name: "Average Booking Time", value: "5 mins" },
-];
+import { links } from "@/data/misc/links";
+import { stats } from "@/data/misc/stats";
 
 export default function About() {
   return (
@@ -25,7 +13,7 @@ export default function About() {
         <h2 className="text-xl sm:text-2xl md:text-5xl font-semibold tracking-tight text-gray-900">
           About Truckora
         </h2>
-        <p className="mt-8 text-xs sm:text-sm md:text-lg font-medium text-pretty text-gray-700 sm:text-xl/8">
+        <p className="mx-6 md:mx-0 mt-4 md:mt-8 text-sm md:text-lg font-medium text-pretty text-gray-700 sm:text-xl/8">
           Truckora is a modern truck reservation platform that connects
           businesses and individuals with reliable trucks for transport,
           logistics, and moving needs. Our platform makes it simple to browse
