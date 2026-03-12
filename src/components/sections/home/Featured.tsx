@@ -76,49 +76,56 @@ export default function Featured() {
         <div className="fixed inset-0 bg-black/40" />
 
         <div className="fixed inset-0 flex items-center justify-center p-4">
-          <Dialog.Panel className="w-full max-w-lg rounded-xl bg-white p-6">
+          <Dialog.Panel className="w-full max-w-7xl rounded-xl bg-white p-6 max-h-[90vh] overflow-y-auto">
             {selectedTruck && (
               <>
-                <Image
-                  src={selectedTruck.image}
-                  alt={selectedTruck.name}
-                  width={600}
-                  height={300}
-                  className="w-full h-56 object-cover rounded-lg"
-                />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="h-full">
+                    <Image
+                      src={selectedTruck.image}
+                      alt={selectedTruck.name}
+                      width={1000}
+                      height={500}
+                      className="w-full h-48 md:h-full object-cover rounded-lg"
+                    />
+                  </div>
 
-                <Dialog.Title className="mt-4 text-lg font-semibold">
-                  {selectedTruck.name}
-                </Dialog.Title>
+                  <div className="overflow-y-auto pr-2">
+                    <Dialog.Title className="text-lg font-semibold">
+                      {selectedTruck.name}
+                    </Dialog.Title>
 
-                <p className="text-gray-500">{selectedTruck.brand}</p>
+                    <p className="text-gray-500">{selectedTruck.brand}</p>
 
-                <div className="mt-4 space-y-2 text-sm text-gray-600">
-                  <p>Category: {selectedTruck.category}</p>
-                  <p>Capacity: {selectedTruck.capacityTons} tons</p>
-                  <p>Transmission: {selectedTruck.transmission}</p>
-                  <p>Fuel: {selectedTruck.fuelType}</p>
+                    <div className="mt-4 space-y-2 text-sm text-gray-600">
+                      <p>Category: {selectedTruck.category}</p>
+                      <p>Capacity: {selectedTruck.capacityTons} tons</p>
+                      <p>Transmission: {selectedTruck.transmission}</p>
+                      <p>Fuel: {selectedTruck.fuelType}</p>
 
-                  <p>
-                    Driver Included:{" "}
-                    {selectedTruck.driverIncluded ? "Yes" : "No"}
-                  </p>
-                  <p>
-                    Rating: ⭐ {selectedTruck.rating} ({selectedTruck.reviews}{" "}
-                    reviews)
-                  </p>
+                      <p>
+                        Driver Included:{" "}
+                        {selectedTruck.driverIncluded ? "Yes" : "No"}
+                      </p>
+
+                      <p>
+                        Rating: ⭐ {selectedTruck.rating} (
+                        {selectedTruck.reviews} reviews)
+                      </p>
+                    </div>
+
+                    <p className="mt-4 text-lg font-semibold text-blue-600">
+                      ${selectedTruck.pricePerDay} / day
+                    </p>
+
+                    <button
+                      onClick={() => setSelectedTruck(null)}
+                      className="mt-6 w-full rounded-lg bg-gray-800 hover:bg-black text-white py-2 cursor-pointer transition duration-300"
+                    >
+                      Close
+                    </button>
+                  </div>
                 </div>
-
-                <p className="mt-4 text-lg font-semibold text-blue-600">
-                  ${selectedTruck.pricePerDay} / day
-                </p>
-
-                <button
-                  onClick={() => setSelectedTruck(null)}
-                  className="mt-6 w-full rounded-lg bg-gray-900 text-white py-2"
-                >
-                  Close
-                </button>
               </>
             )}
           </Dialog.Panel>
