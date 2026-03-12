@@ -5,7 +5,7 @@ export const features = [
       "Find and reserve the perfect truck in seconds, so you can focus on moving your goods, not searching for vehicles.",
     spanRows: 2,
     spanCols: 1,
-    positionClasses: "lg:row-span-2",
+    positionClasses: "lg:row-span-2 justify-center items-center",
   },
   {
     title: "Stress-Free Scheduling",
@@ -29,6 +29,6 @@ export const features = [
       "From browsing trucks to completing your reservation, Truckora keeps all your logistics in one easy-to-use platform.",
     spanRows: 2,
     spanCols: 1,
-    positionClasses: "lg:row-span-2",
+    positionClasses: "lg:row-span-2 justify-center items-center",
   },
 ];

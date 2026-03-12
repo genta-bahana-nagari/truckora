@@ -34,7 +34,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative isolate overflow-hidden justify-center bg-white py-24 sm:py-32"
+      className="relative isolate overflow-hidden justify-center bg-white"
     >
       <div className="relative w-full h-[65vh] md:h-auto md:aspect-[21/9] overflow-hidden">
         {slides.map((slide, index) => (

@@ -20,7 +20,7 @@ const WhyChooseUs = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg p-8 ${feature.positionClasses}`}
+              className={`relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-lg p-8 hover:scale-105 transition duration-300 cursor-pointer ${feature.positionClasses}`}
             >
               <h3 className="text-lg font-semibold text-gray-900 text-center">
                 {feature.title}
