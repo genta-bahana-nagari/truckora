@@ -55,7 +55,19 @@ export default function TruckPage() {
           </ol>
         </nav>
 
-        <div className="mx-auto max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8 lg:pt-16 lg:pb-24">
+        <div className="mx-auto max-w-2xl px-4 pt-10 pb-12 sm:px-6 lg:grid lg:max-w-7xl lg:gap-x-8 lg:px-8">
+          <div className="relative w-full aspect-video md:aspect-[16/10] rounded-xl overflow-hidden">
+            <Image
+              src={truck.image}
+              alt={truck.name}
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr] lg:gap-x-8 lg:px-8">
           <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
               {truck.name}
@@ -66,7 +78,6 @@ export default function TruckPage() {
             <p className="text-3xl tracking-tight text-gray-900">
               ${truck.pricePerDay}
             </p>
-
             <TruckRating truck={truck} />
           </div>
 
@@ -80,14 +91,6 @@ export default function TruckPage() {
             </div>
 
             <TruckSpecs truck={truck} />
-
-            {/* <div className="mt-10">
-              <h2 className="text-sm font-medium text-gray-900">Details</h2>
-
-              <div className="mt-4 space-y-6">
-                <p className="text-sm text-gray-600">{truck.details}</p>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

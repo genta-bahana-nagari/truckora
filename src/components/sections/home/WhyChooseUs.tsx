@@ -1,7 +1,7 @@
 "use client";
 import { features } from "@/data/misc/features";
 
-const WhyChooseUs = () => {
+export default function WhyChooseUs() {
   return (
     <section
       id="why-choose-us"
@@ -11,11 +11,6 @@ const WhyChooseUs = () => {
         <h2 className="mx-auto mt-2 text-center text-4xl font-semibold tracking-tight text-gray-950 sm:text-5xl">
           Why Choose Truckora?
         </h2>
-        <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-          Simplifying truck reservations and fleet management for businesses of
-          all sizes.
-        </p>
-
         <div className="mt-12 grid gap-6 sm:mt-16 lg:grid-cols-3 lg:grid-rows-2">
           {features.map((feature, index) => (
             <div
@@ -36,5 +31,3 @@ const WhyChooseUs = () => {
     </section>
   );
 };
-
-export default WhyChooseUs;

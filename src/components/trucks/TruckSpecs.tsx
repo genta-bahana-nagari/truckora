@@ -13,7 +13,7 @@ export function TruckSpecs({ truck }: { truck: (typeof trucks)[0] }) {
   ];
 
   return (
-    <div className="mt-10">
+    <div className="mt-6">
       <h3 className="text-sm font-medium text-gray-900">Highlights</h3>
       <div className="mt-4">
         <ul role="list" className="list-disc space-y-2 pl-4 text-sm">
