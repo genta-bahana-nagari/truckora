@@ -16,6 +16,7 @@ export type TruckListing = {
   
   brand: string;
   series: string;
+  description: string;
   truckClass: "light-duty" | "medium-duty" | "heavy-duty";
   category: TruckCategory;
   capacityTons: number;
