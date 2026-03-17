@@ -35,8 +35,13 @@ export function TruckSidebar({ truckClass, setTruckClass, category, setCategory 
                      focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-gray-300 transition"
         >
           <option value="all">All</option>
-          <option value="dump">Dump</option>
           <option value="box">Box</option>
+          <option value="car-carrier">Car Carrier</option>
+          <option value="dump">Dump</option>
+          <option value="flatbed">Flatbed</option>
+          <option value="logging">Logging</option>
+          <option value="refrigerated">Refrigreated</option>
+          <option value="tanker">Tanker</option>
           <option value="trailer">Trailer</option>
         </select>
       </div>
