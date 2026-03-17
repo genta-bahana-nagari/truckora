@@ -1,6 +1,6 @@
 import { BsStarFill } from "react-icons/bs";
 
-import { reviews } from "@/data/reviews";
+import { reviews } from "@/data/truck/reviews";
 
 export function TruckReviews({ truckId }: { truckId: string }) {
   const truckReviews = reviews.filter((r) => r.truckId === truckId);
