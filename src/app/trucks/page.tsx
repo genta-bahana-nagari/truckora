@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { trucks } from "@/data/trucks";
+import { trucks } from "@/data/truck/trucks";
 import { TruckGrid } from "@/components/sections/trucks/TruckGrid";
 import { TruckSidebar } from "@/components/sections/trucks/TruckSidebar";
 

@@ -25,7 +25,7 @@ export default function CTA() {
               </a>
 
               <a
-                href="#"
+                href="/company/about"
                 className="rounded-md border border-gray-300 px-5 py-2.5 text-sm font-semibold text-gray-900 transition hover:bg-gray-100"
               >
                 Learn more →
