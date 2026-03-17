@@ -30,9 +30,4 @@ export type TruckListing = {
   reviews: number;
   driverIncluded: boolean;
   fuelType: FuelType;
-
-  // location: string;
-  // minRentalDays: number;
-  // licenseRequired: "B2" | "B1" | "Commercial";
-  // instantBooking: boolean;
 };
