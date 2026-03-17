@@ -8,7 +8,7 @@ import { TruckSpecs } from "@/components/sections/trucks/TruckSpecs";
 import { TruckReviews } from "@/components/sections/trucks/TruckReviews";
 
 import { useParams } from "next/navigation";
-import { trucks } from "@/data/trucks";
+import { trucks } from "@/data/truck/trucks";
 
 export default function TruckPage() {
   const params = useParams();
