@@ -22,7 +22,7 @@ export default function About() {
           logistics operations, Truckora helps you get the job done efficiently.
         </p>
       </div>
-      <div className="mx-auto mt-10 max-w-3xl lg:max-w-none justify-center">
+      <div className="mx-auto mt-10 max-w-3xl max-w-7xl justify-center">
         <div className="flex flex-wrap gap-x-8 gap-y-6 text-base/7 font-semibold text-gray-900 justify-center md:flex lg:gap-x-10">
           {links.map((link) => (
             <a
