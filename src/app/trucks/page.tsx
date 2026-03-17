@@ -10,6 +10,8 @@ import { TruckSidebar } from "@/components/sections/trucks/TruckSidebar";
 export default function Trucks() {
   const [truckClass, setTruckClass] = useState("all");
   const [category, setCategory] = useState("all");
+  const [fuelType, setFuelType] = useState("all");
+  const [transmission, setTransmission] = useState("all");
   const [search, setSearch] = useState("");
 
   const deferredSearch = useDeferredValue(search);
@@ -17,6 +19,8 @@ export default function Trucks() {
   const filteredTrucks = trucks.filter((truck) => {
     const matchClass = truckClass === "all" || truck.truckClass === truckClass;
     const macthCategory = category === "all" || truck.category === category;
+    const matchFuel = fuelType === "all" || truck.fuelType === fuelType;
+    const matchTransmission = transmission === "all" || truck.transmission === transmission;
 
     const matchSearch =
       truck.name.toLowerCase().includes(deferredSearch.toLowerCase()) ||
@@ -25,7 +29,7 @@ export default function Trucks() {
       truck.category.toLowerCase().includes(deferredSearch.toLowerCase()) ||
       truck.truckClass.toLowerCase().includes(deferredSearch.toLowerCase());
 
-    return matchClass && macthCategory && matchSearch;
+    return matchClass && macthCategory && matchFuel && matchTransmission && matchSearch;
   });
 
   return (
@@ -50,6 +54,10 @@ export default function Trucks() {
             setTruckClass={setTruckClass}
             category={category}
             setCategory={setCategory}
+            fuelType={fuelType}
+            setFuelType={setFuelType}
+            transmission={transmission}
+            setTransmission={setTransmission}
             className="self-start"
           />
 
