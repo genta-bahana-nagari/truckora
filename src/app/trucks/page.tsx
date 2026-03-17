@@ -1,12 +1,20 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
-
+import { useState } from "react";
 import { trucks } from "@/data/trucks";
+import { TruckGrid } from "@/components/sections/trucks/TruckGrid";
+import { TruckSidebar } from "@/components/sections/trucks/TruckSidebar";
 
 export default function Trucks() {
-  const featuredTrucks = trucks;
+  const [truckClass, setTruckClass] = useState("all");
+  const [category, setCategory] = useState("all");
+
+  const filteredTrucks = trucks.filter((truck) => {
+    const matchClass = truckClass === "all" || truck.truckClass === truckClass;
+    const macthCategory = category === "all" || truck.category === category;
+
+    return matchClass && macthCategory;
+  });
 
   return (
     <section
@@ -24,37 +32,18 @@ export default function Trucks() {
           </p>
         </div>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {featuredTrucks.map((truck) => (
-            <Link
-              href={`trucks/${truck.id}`}
-              key={truck.id}
-              className="mx-4 my-auto md:my-6 md:mx-0 md:my-0 group relative cursor-pointer rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:ring-2
-                  hover:ring-black/5 transition-all duration-200"
-            >
-              <div className="aspect-square w-full overflow-hidden rounded-t-2xl bg-gray-200">
-                <Image
-                  src={truck.image}
-                  alt={truck.name}
-                  width={400}
-                  height={200}
-                  className="group-hover:opacity-75 h-full w-full object-cover object-center group-hover:opacity-90 transition-opacity duration-200"
-                />
-              </div>
+        <div className="grid lg:grid-cols-4 gap-10">
+          <TruckSidebar
+            truckClass={truckClass}
+            setTruckClass={setTruckClass}
+            category={category}
+            setCategory={setCategory}
+            className="self-start"
+          />
 
-              <div className="mt-4 flex justify-between px-4 mb-4">
-                <div>
-                  <h3 className="text-sm text-gray-700">{truck.name}</h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    {truck.brand} {truck.series}
-                  </p>
-                </div>
-                <p className="text-sm font-semibold text-gray-900">
-                  ${truck.pricePerDay} / day
-                </p>
-              </div>
-            </Link>
-          ))}
+          <div className="lg:col-span-3">
+            <TruckGrid trucks={filteredTrucks} />
+          </div>
         </div>
       </div>
     </section>
