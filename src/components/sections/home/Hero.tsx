@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
 
@@ -24,6 +24,7 @@ const slides = [
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
 
   const prev = () =>
     setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -31,19 +32,33 @@ export default function HeroSection() {
   const next = () =>
     setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
 
+  useEffect(() => {
+    if (isHovered) return;
+
+    const interval = setInterval(() => {
+      next();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isHovered, current]);
+
   return (
     <section
       id="hero"
       className="relative isolate overflow-hidden justify-center bg-white"
     >
-      <div className="relative w-full h-[65vh] md:h-auto md:aspect-[21/9] overflow-hidden">
+      <div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="relative w-full h-[65vh] md:h-auto md:aspect-[21/9] overflow-hidden"
+      >
         {slides.map((slide, index) => (
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-700 ${
               index === current
-                ? "pointer-events-auto opacity-100"
-                : "pointer-events-none opacity-0"
+                ? "pointer-events-auto opacity-100 scale-100"
+                : "pointer-events-none opacity-0 scale-105"
             }`}
           >
             <Image
@@ -51,15 +66,17 @@ export default function HeroSection() {
               alt={slide.title}
               fill
               priority={index === 0}
-              className="object-cover"
+              className={`object-cover trainsition-transform duration-[5000ms] ease-linear ${
+                index === current ? "scale-100" : "scale-110"
+              }`}
             />
-
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-0" />
             <div className="absolute inset-0 flex items-end md:items-center md:px-24 pb-12 md:pb-0">
-              <div className="max-w-md md:max-w-xl px-5 md:px-12 text-white">
+              <div className="max-w-md md:max-w-2xl px-5 md:px-12 text-white">
                 <h1 className="text-xl sm:text-2xl md:text-5xl font-bold mb-2 md:mb-4">
                   {slide.title}
                 </h1>
-                <p className="text-xs sm:text-sm md:text-lg mb-3 md:mb-6 text-white/90">
+                <p className="text-xs sm:text-sm md:text-lg font-bold mb-3 md:mb-6 text-white/90">
                   {slide.description}
                 </p>
 

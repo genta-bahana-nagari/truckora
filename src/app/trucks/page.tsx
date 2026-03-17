@@ -1,19 +1,31 @@
 "use client";
 
+import { useDeferredValue } from "react";
 import { useState } from "react";
-import { trucks } from "@/data/trucks";
+
+import { trucks } from "@/data/truck/trucks";
 import { TruckGrid } from "@/components/sections/trucks/TruckGrid";
 import { TruckSidebar } from "@/components/sections/trucks/TruckSidebar";
 
 export default function Trucks() {
   const [truckClass, setTruckClass] = useState("all");
   const [category, setCategory] = useState("all");
+  const [search, setSearch] = useState("");
+
+  const deferredSearch = useDeferredValue(search);
 
   const filteredTrucks = trucks.filter((truck) => {
     const matchClass = truckClass === "all" || truck.truckClass === truckClass;
     const macthCategory = category === "all" || truck.category === category;
 
-    return matchClass && macthCategory;
+    const matchSearch =
+      truck.name.toLowerCase().includes(deferredSearch.toLowerCase()) ||
+      truck.brand.toLowerCase().includes(deferredSearch.toLowerCase()) ||
+      truck.series.toLowerCase().includes(deferredSearch.toLowerCase()) ||
+      truck.category.toLowerCase().includes(deferredSearch.toLowerCase()) ||
+      truck.truckClass.toLowerCase().includes(deferredSearch.toLowerCase());
+
+    return matchClass && macthCategory && matchSearch;
   });
 
   return (
@@ -42,7 +54,24 @@ export default function Trucks() {
           />
 
           <div className="lg:col-span-3">
-            <TruckGrid trucks={filteredTrucks} />
+            <div className="mb-6">
+              <input
+                type="text"
+                placeholder="Search trucks (e.g. Volvo, Dump, FH16...)"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full rounded-xl border border-gray-200 px-4 py-2 text-sm
+                 focus:outline-none focus:ring-2 focus:ring-black/5
+                 focus:border-gray-300 transition"
+              />
+            </div>
+            {filteredTrucks.length === 0 ? (
+              <p className="text-gray-500 text-lg font-medium">
+                No trucks found.
+              </p>
+            ) : (
+              <TruckGrid trucks={filteredTrucks} />
+            )}
           </div>
         </div>
       </div>

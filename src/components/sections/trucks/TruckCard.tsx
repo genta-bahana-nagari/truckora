@@ -4,19 +4,17 @@ import Image from "next/image";
 import { TruckListing } from "@/types/truckType";
 
 export function TruckCard({ truck }: { truck: TruckListing }) {
-  const classCat = [
-    `${(truck.truckClass + " " + truck.category)
-      .replace("-", " ")
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ")}`,
-  ];
+  const classCat = (truck.truckClass + " " + truck.category)
+    .replace("-", " ")
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 
   return (
     <Link
-      href={`trucks/${truck.id}`}
+      href={`/trucks/${truck.id}`}
       key={truck.id}
-      className="mx-4 my-auto md:my-6 md:mx-0 md:my-0 group relative cursor-pointer rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:ring-2
+      className="mx-4 my-auto md:mx-0 md:my-0 group relative cursor-pointer rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:ring-2
         hover:ring-black/5 transition-all duration-200"
     >
       <div className="aspect-square w-full overflow-hidden rounded-t-2xl bg-gray-200">

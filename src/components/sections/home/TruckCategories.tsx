@@ -1,6 +1,6 @@
 "use client";
 
-import { categories } from "@/data/category";
+import { categories } from "@/data/truck/category";
 
 const TruckCategories = () => {
   return (

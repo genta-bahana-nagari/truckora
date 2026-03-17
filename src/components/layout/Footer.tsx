@@ -75,25 +75,25 @@ export default function Footer() {
 
           <ul className="space-y-3 text-sm">
             <li>
-              <Link href="/about" className="hover:text-white">
+              <Link href="/company/about" className="hover:text-white">
                 About Us
               </Link>
             </li>
 
             <li>
-              <Link href="/careers" className="hover:text-white">
+              <Link href="/company/careers" className="hover:text-white">
                 Careers
               </Link>
             </li>
 
             <li>
-              <Link href="/partners" className="hover:text-white">
+              <Link href="/company/partners" className="hover:text-white">
                 Partners
               </Link>
             </li>
 
             <li>
-              <Link href="/contact" className="hover:text-white">
+              <Link href="/company/contact" className="hover:text-white">
                 Contact
               </Link>
             </li>

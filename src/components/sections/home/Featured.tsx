@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import Image from "next/image";
 
-import { trucks } from "@/data/trucks";
+import { trucks } from "@/data/truck/trucks";
 import { TruckListing } from "@/types/truckType";
 
 export default function Featured() {
