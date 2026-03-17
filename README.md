@@ -17,8 +17,6 @@ This is my personal portfolio website built using **NextJS 16** along with **Tai
 
 - Fully responsive design with Tailwind CSS
 - Smooth animations and transitions
-- Dynamic project showcase with images and descriptions
-- Contact form integrated with EmailJS for email submissions
 
 ---
 
