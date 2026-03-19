@@ -62,7 +62,7 @@ export default function Trucks() {
           />
 
           <div className="lg:col-span-3">
-            <div className="mb-6">
+            <div className="mb-6 flex justify-center align-center px-4 md:px-0">
               <input
                 type="text"
                 placeholder="Search trucks (e.g. Volvo, Dump, FH16...)"
