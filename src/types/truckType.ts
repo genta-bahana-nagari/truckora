@@ -1,28 +1,28 @@
-export type TruckCategory =
-  | "box"
-  | "refrigerated"
-  | "flatbed"
-  | "dump"
-  | "trailer"
-  | "tanker"
-  | "car-carrier"
-  | "logging";
+export type TruckClass = "light-duty" | "medium-duty" | "heavy-duty";
+export type TruckClassFilter = "all" | TruckClass;
+
+export type TruckCategory = "box" | "refrigerated" | "flatbed" | "dump" | "trailer" | "tanker" | "car-carrier" | "logging";
+export type TruckCategoryFilter = "all" | TruckCategory;
 
 export type FuelType = "diesel" | "electric";
+export type FuelTypeFilter = "all" | FuelType;
+
+export type Transmission = "manual" | "automatic";
+export type TransmissionFilter = "all" | Transmission;
 
 export type TruckListing = {
   id: string;
   name: string;
-  
+
   brand: string;
   series: string;
   description: string;
-  truckClass: "light-duty" | "medium-duty" | "heavy-duty";
+  truckClass: TruckClass;
   category: TruckCategory;
   capacityTons: number;
   year: number;
-  
-  transmission: "manual" | "automatic";
+
+  transmission: Transmission;
   pricePerDay: number;
   image: string;
   available: boolean;
