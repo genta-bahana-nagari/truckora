@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -19,6 +19,28 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
   const pathname = usePathname();
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (window.innerWidth < 768) return;
+
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setCompanyOpen(false);
+      }
+    }
+
+    if (companyOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [companyOpen]);
 
   const menu = [
     { name: "Trucks", href: "/trucks", icon: HiTruck },
@@ -51,12 +73,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-2 text-xl font-bold tracking-tight text-heading"
         >
-          <Image
-            src="/icon-circle.png"
-            alt="Truckora"
-            width={40}
-            height={40}
-          />
+          <Image src="/icon-circle.png" alt="Truckora" width={40} height={40} />
           <span>Truckora</span>
         </Link>
 
@@ -76,7 +93,10 @@ export default function Navbar() {
                   </button>
 
                   {companyOpen && (
-                    <div className="absolute left-0 mt-3 w-56 rounded-lg border border-default bg-white shadow-lg">
+                    <div
+                      ref={dropdownRef}
+                      className="absolute left-0 mt-3 w-56 rounded-lg border border-default bg-white shadow-lg"
+                    >
                       <div className="flex flex-col p-2">
                         {item.children.map((child) => (
                           <Link
@@ -125,11 +145,11 @@ export default function Navbar() {
       </div>
 
       <div
-        className={`md:hidden border-t border-default bg-white transition-all duration-300 ${
-          open ? "max-h-100 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
+        className={`md:hidden border-t border-default bg-white overflow-hidden transition-all duration-300 ${
+          open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col p-4 gap-4 min-h-screen">
+        <div className="flex flex-col p-4 gap-4">
           {menu.map((item) => {
             const Icon = item.icon;
 

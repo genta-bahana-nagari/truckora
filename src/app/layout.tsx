@@ -90,6 +90,11 @@ export const metadata: Metadata = {
   themeColor: siteConfig.themeColor,
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
