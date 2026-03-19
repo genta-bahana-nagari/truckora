@@ -6,12 +6,13 @@ import { useState } from "react";
 import { trucks } from "@/data/truck/trucks";
 import { TruckGrid } from "@/components/sections/trucks/TruckGrid";
 import { TruckSidebar } from "@/components/sections/trucks/TruckSidebar";
+import { FuelTypeFilter, TransmissionFilter, TruckCategoryFilter, TruckClassFilter } from "@/types/truckType";
 
 export default function Trucks() {
-  const [truckClass, setTruckClass] = useState("all");
-  const [category, setCategory] = useState("all");
-  const [fuelType, setFuelType] = useState("all");
-  const [transmission, setTransmission] = useState("all");
+  const [truckClass, setTruckClass] = useState<TruckClassFilter>("all");
+  const [category, setCategory] = useState<TruckCategoryFilter>("all");
+  const [fuelType, setFuelType] = useState<FuelTypeFilter>("all");
+  const [transmission, setTransmission] = useState<TransmissionFilter>("all");
   const [search, setSearch] = useState("");
 
   const deferredSearch = useDeferredValue(search);
@@ -58,7 +59,6 @@ export default function Trucks() {
             setFuelType={setFuelType}
             transmission={transmission}
             setTransmission={setTransmission}
-            className="self-start"
           />
 
           <div className="lg:col-span-3">

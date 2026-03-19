@@ -7,5 +7,4 @@ export const siteConfig = {
   ogImage: "/images/og-image.png",
   ogImageAlt: "Truckora - Truck Booking Platform",
   locale: "en_US",
-  themeColor: "#eeeeef",
 };
