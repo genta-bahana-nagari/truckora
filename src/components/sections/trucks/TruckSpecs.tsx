@@ -1,4 +1,6 @@
-export function TruckSpecs({ truck }: { truck: (typeof trucks)[0] }) {
+import { TruckListing } from "@/types/truckType";
+
+export function TruckSpecs({ truck }: { truck: TruckListing }) {
   const highlights = [
     `${(truck.truckClass + " " + truck.category)
       .replace("-", " ")
