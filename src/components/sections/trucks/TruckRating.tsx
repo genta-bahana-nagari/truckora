@@ -1,6 +1,7 @@
+import { TruckListing } from "@/types/truckType";
 import { BsStarFill } from "react-icons/bs";
 
-export function TruckRating({ truck }: { truck: (typeof trucks)[0] }) {
+export function TruckRating({ truck }: { truck: TruckListing }) {
   const fullStars = Math.floor(truck.rating);
   const totalStars = 5;
 
