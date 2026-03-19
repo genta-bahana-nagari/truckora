@@ -1,15 +1,11 @@
 "use client";
-
-import { useState } from "react";
-import { Dialog } from "@headlessui/react";
 import Image from "next/image";
 
 import { trucks } from "@/data/truck/trucks";
-import { TruckListing } from "@/types/truckType";
+import Link from "next/link";
 
 export default function Featured() {
-  const [selectedTruck, setSelectedTruck] = useState<TruckListing | null>(null);
-
+  
   const featuredTrucks = trucks.slice(0, 4);
 
   return (
@@ -30,9 +26,11 @@ export default function Featured() {
 
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {featuredTrucks.map((truck) => (
-            <div
+            <Link
+              href={`/trucks/${truck.id}`}
+              target="blank"
+              
               key={truck.id}
-              onClick={() => setSelectedTruck(truck)}
               className="mx-4 my-6 md:mx-0 md:my-0 group relative cursor-pointer rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:ring-2
               hover:ring-black/5 transition-all duration-200"
             >
@@ -54,7 +52,7 @@ export default function Featured() {
                   {truck.brand} - {truck.series}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -68,7 +66,7 @@ export default function Featured() {
         </div>
       </div>
 
-      <Dialog
+      {/* <Dialog
         open={!!selectedTruck}
         onClose={() => setSelectedTruck(null)}
         className="relative z-50"
@@ -109,12 +107,12 @@ export default function Featured() {
                       </p>
 
                       <p>
-                        Rating: ⭐ {selectedTruck.rating} (
-                        {selectedTruck.reviews} reviews)
+                        Rating: <BsStarFill />{" "}{selectedTruck.rating} ({selectedTruck.reviews}{" "}
+                        reviews)
                       </p>
                     </div>
 
-                    <p className="mt-4 text-lg font-semibold text-blue-600">
+                    <p className="mt-4 text-lg font-semibold text-black">
                       ${selectedTruck.pricePerDay} / day
                     </p>
 
@@ -130,7 +128,7 @@ export default function Featured() {
             )}
           </Dialog.Panel>
         </div>
-      </Dialog>
+      </Dialog> */}
     </section>
   );
 }
