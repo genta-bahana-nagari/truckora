@@ -5,7 +5,6 @@ import { trucks } from "@/data/truck/trucks";
 import Link from "next/link";
 
 export default function Featured() {
-  
   const featuredTrucks = trucks.slice(0, 4);
 
   return (
@@ -15,10 +14,10 @@ export default function Featured() {
     >
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-lg lg:text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Our Available Fleet
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-sm lg:text-lg text-gray-600">
             Explore our fleet of dependable trucks built to move your goods
             safely, efficiently, and on time.
           </p>
@@ -29,7 +28,6 @@ export default function Featured() {
             <Link
               href={`/trucks/${truck.id}`}
               target="blank"
-              
               key={truck.id}
               className="mx-4 md:mx-0 group relative cursor-pointer rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:ring-2
               hover:ring-black/5 transition-all duration-200"

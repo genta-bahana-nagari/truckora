@@ -1,27 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import ReservationForm from "@/components/sections/booking/ReservationForm";
-import { TruckSidebar } from "@/components/sections/trucks/TruckSidebar";
 import { trucks } from "@/data/truck/trucks";
-import { TruckListing } from "@/types/truckType";
-import { TruckCarousel } from "@/components/sections/booking/TruckCarousel";
-
-type FilterValue<T extends string> = T | "all";
 
 export default function ReservePage() {
+  const [pickup, setPickup] = useState("");
+  const [dropoff, setDropoff] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [weight, setWeight] = useState(0);
-
-  const [truckClass, setTruckClass] =
-    useState<FilterValue<TruckListing["truckClass"]>>("all");
-  const [category, setCategory] =
-    useState<FilterValue<TruckListing["category"]>>("all");
-  const [fuelType, setFuelType] =
-    useState<FilterValue<TruckListing["fuelType"]>>("all");
-  const [transmission, setTransmission] =
-    useState<FilterValue<TruckListing["transmission"]>>("all");
 
   const [selectedTruckId, setSelectedTruckId] = useState<string | null>(null);
 
@@ -38,13 +25,6 @@ export default function ReservePage() {
   const filteredTrucks = trucks.filter((truck) => {
     if (!truck.available) return false;
     if (weight && truck.capacityTons < weight) return false;
-
-    if (truckClass !== "all" && truck.truckClass !== truckClass) return false;
-    if (category !== "all" && truck.category !== category) return false;
-    if (fuelType !== "all" && truck.fuelType !== fuelType) return false;
-    if (transmission !== "all" && truck.transmission !== transmission)
-      return false;
-
     return true;
   });
 
@@ -54,80 +34,107 @@ export default function ReservePage() {
     selectedTruck && days > 0 ? selectedTruck.pricePerDay * days : 0;
 
   return (
-    <section
-      id="reserve"
-      className="relative isolate overflow-hidden justify-center bg-white py-20 sm:py-26"
-    >
-      <div className="mx-auto md:mx-16 max-w-screen px-4 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Reserve Your Truck
-          </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Explore our fleet of dependable trucks built to move your goods
-            safely, efficiently, and on time.
-          </p>
+    <section className="bg-white py-16 px-4 md:px-8 max-w-4xl mx-auto space-y-8">
+      <div className="text-center">
+        <h2 className="text-2xl md:text-3xl font-bold">Reserve Your Truck</h2>
+        <p className="text-gray-500 mt-2">Plan your logistics in seconds</p>
+      </div>
+
+      <div className="border rounded-xl p-6 space-y-4">
+        <div className="grid md:grid-cols-2 gap-4">
+          <input
+            placeholder="Pickup Location"
+            onChange={(e) => setPickup(e.target.value)}
+            className="input"
+          />
+
+          <input
+            placeholder="Drop-off Location"
+            onChange={(e) => setDropoff(e.target.value)}
+            className="input"
+          />
+
+          <input
+            type="datetime-local"
+            onChange={(e) => setStartDate(e.target.value)}
+            className="input"
+          />
+
+          <input
+            type="datetime-local"
+            onChange={(e) => setEndDate(e.target.value)}
+            className="input"
+          />
+
+          <input
+            type="number"
+            placeholder="Load Weight (tons)"
+            onChange={(e) => setWeight(Number(e.target.value))}
+            className="input md:col-span-2"
+          />
         </div>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-12">
-        <div className="lg:col-span-2 space-y-6">
-          <ReservationForm
-            setStartDate={setStartDate}
-            setEndDate={setEndDate}
-            setWeight={setWeight}
-          />
-          <div className="space-y-3">
-            {filteredTrucks.length === 0 ? (
-              <p className="text-gray-500 text-lg font-medium">
-                No trucks found.
-              </p>
-            ) : (
-              <TruckCarousel
-                trucks={filteredTrucks}
-                selectedTruckId={selectedTruckId}
-                onSelect={setSelectedTruckId}
-              />
-            )}
-          </div>
+      <div className="space-y-3">
+        <h3 className="font-semibold text-lg">Select a Truck</h3>
+
+        <div className="overflow-hidden">
+          
         </div>
+        {filteredTrucks.length === 0 ? (
+          <p className="text-gray-500">No trucks available</p>
+        ) : (
+          <div className="max-h-96 overflow-y-auto rounded-xl py-2 space-y-3">
+            {filteredTrucks.map((truck) => (
+              <div
+                key={truck.id}
+                onClick={() => setSelectedTruckId(truck.id)}
+                className={`p-4 border rounded-xl cursor-pointer transition
+                  ${
+                    selectedTruckId === truck.id
+                      ? "border-black bg-gray-50"
+                      : "border-gray-200"
+                  }
+                `}
+              >
+                <div className="flex justify-between">
+                  <div>
+                    <p className="font-semibold">{truck.name}</p>
+                    <p className="text-sm text-gray-500">
+                      {truck.capacityTons} tons • {truck.category}
+                    </p>
+                  </div>
 
-        <div className="space-y-6">
-          <TruckSidebar
-            truckClass={truckClass}
-            setTruckClass={setTruckClass}
-            category={category}
-            setCategory={setCategory}
-            fuelType={fuelType}
-            setFuelType={setFuelType}
-            transmission={transmission}
-            setTransmission={setTransmission}
-          />
-
-          <div className="p-4 border rounded-xl">
-            <p>Duration: {days} days</p>
-
-            {selectedTruck ? (
-              <>
-                <p className="font-semibold mt-2">{selectedTruck.name}</p>
-                <p>
-                  ${selectedTruck.pricePerDay} × {days}
-                </p>
-                <p className="text-xl font-bold mt-2">Total: ${totalPrice}</p>
-              </>
-            ) : (
-              <p className="text-gray-500 mt-2">Select a truck</p>
-            )}
+                  <p className="font-bold">${truck.pricePerDay}/day</p>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <button
-            disabled={!selectedTruck || !days}
-            className="w-full bg-blue-600 text-white py-3 rounded-lg disabled:bg-gray-300"
-          >
-            Confirm Reservation
-          </button>
-        </div>
+        )}
       </div>
+
+      <div className="border rounded-xl p-6 space-y-2 bg-gray-50">
+        <p>Duration: {days} days</p>
+
+        {selectedTruck ? (
+          <>
+            <p className="font-semibold">{selectedTruck.name}</p>
+            <p>
+              ${selectedTruck.pricePerDay} × {days}
+            </p>
+            <p className="text-xl font-bold">Total: ${totalPrice}</p>
+          </>
+        ) : (
+          <p className="text-gray-500">Select a truck to see price</p>
+        )}
+      </div>
+
+      <button
+        disabled={!selectedTruck || !days || !pickup || !dropoff}
+        className="w-full bg-gray-800 hover:bg-gray-900 hover:cursor-pointer transition duration-300 text-white py-3 rounded-lg disabled:bg-gray-300 disabled:cursor-not-allowed"
+      >
+        Confirm Reservation
+      </button>
     </section>
   );
 }
