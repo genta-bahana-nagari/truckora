@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "@/styles/globals.css";
 import { siteConfig } from "@/lib/site";
 import Navbar from "@/components/layout/Navbar";
@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   ],
 
   authors: [{ name: "Truckora Team" }],
-  creator: siteConfig.name,
-  publisher: siteConfig.name,
+  creator: siteConfig.shortName,
+  publisher: siteConfig.shortName,
 
   category: "logistics",
 
   alternates: {
-    canonical: "/",
+    canonical: siteConfig.url,
   },
 
   formatDetection: {
@@ -42,13 +42,15 @@ export const metadata: Metadata = {
     telephone: false,
   },
 
+  referrer: "origin-when-cross-origin",
+
   openGraph: {
     type: "website",
-    locale: siteConfig.locale,
-    url: siteConfig.url,
-    siteName: siteConfig.name,
     title: siteConfig.name,
     description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
     images: [
       {
         url: siteConfig.ogImage,
@@ -86,11 +88,14 @@ export const metadata: Metadata = {
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
+
+  manifest: "/manifest.json",
 };
 
-export const viewport = {
+export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: siteConfig.themeColor,
 };
 
 export default function RootLayout({

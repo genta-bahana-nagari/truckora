@@ -1,7 +1,6 @@
 "use client";
 
-import { useDeferredValue } from "react";
-import { useState } from "react";
+import { useDeferredValue, useState } from "react";
 
 import { trucks } from "@/data/truck/trucks";
 import { TruckGrid } from "@/components/sections/trucks/TruckGrid";

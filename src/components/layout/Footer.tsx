@@ -51,7 +51,7 @@ export default function Footer() {
             </li>
 
             <li>
-              <Link href="/reserve" className="hover:text-white">
+              <Link href="/reservation" className="hover:text-white">
                 Reserve Truck
               </Link>
             </li>

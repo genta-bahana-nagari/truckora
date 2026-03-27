@@ -18,7 +18,7 @@ export default function CTA() {
 
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="/reserve"
+                href="/reservation"
                 className="rounded-md bg-black px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-gray-800"
               >
                 Get started
