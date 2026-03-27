@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import { siteConfig } from "@/lib/site";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import ProjectInfo from "@/components/global/ProjectInfo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url || ""),
@@ -109,6 +110,7 @@ export default function RootLayout({
         <Navbar />
         <main className="pt-20">{children}</main>
         <Footer />
+        <ProjectInfo />
       </body>
     </html>
   );
