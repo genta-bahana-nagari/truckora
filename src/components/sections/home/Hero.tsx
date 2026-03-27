@@ -82,7 +82,7 @@ export default function HeroSection() {
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <a
-                    href="/reserve"
+                    href="/reservation"
                     className="border border-white bg-black/20 text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-gray-200 hover:text-black transition duration-300"
                   >
                     Reserve Truck

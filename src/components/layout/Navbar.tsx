@@ -44,7 +44,7 @@ export default function Navbar() {
 
   const menu = [
     { name: "Trucks", href: "/trucks", icon: HiTruck },
-    { name: "Reserve", href: "/reserve", icon: HiCalendarDays },
+    { name: "Reserve", href: "/reservation", icon: HiCalendarDays },
     { name: "Map", href: "/map", icon: HiMap },
     { name: "Compare", href: "/compare", icon: HiArrowsRightLeft },
     {
@@ -127,7 +127,7 @@ export default function Navbar() {
           })}
 
           <Link
-            href="/reserve"
+            href="/reservation"
             onClick={() => setOpen(false)}
             className="rounded-lg border border-black bg-brand px-4 py-2 font-medium transition hover:bg-black hover:text-white"
           >
@@ -194,7 +194,7 @@ export default function Navbar() {
           })}
 
           <Link
-            href="/reserve"
+            href="/reservation"
             onClick={() => setOpen(false)}
             className="mt-2 rounded-lg border border-black bg-brand px-4 py-2 text-center font-medium transition hover:bg-black hover:text-white"
           >
