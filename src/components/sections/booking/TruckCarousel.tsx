@@ -16,12 +16,12 @@ export function TruckCarousel({
     <div className="space-y-3">
       <h3 className="text-lg font-semibold">Select a Truck</h3>
 
-      <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory py-2">
+      <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory py-2 touch-pan-x">
         {trucks.map((truck) => (
           <div
             key={truck.id}
             onClick={() => onSelect(truck.id)}
-            className={`min-w-[260px] max-w-[260px] snap-start rounded-xl border cursor-pointer transition
+            className={`min-w-[260px] max-w-[260px] shrink-0 snap-start rounded-xl border cursor-pointer transition
               ${
                 selectedTruckId === truck.id
                   ? "border-black bg-gray-50"
