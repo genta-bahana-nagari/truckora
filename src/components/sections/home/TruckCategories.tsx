@@ -10,10 +10,10 @@ const TruckCategories = () => {
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h2 className="text-lg lg:text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Provided Categories
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-sm lg:text-lg text-gray-600">
             Choose the right truck for your transportation needs
           </p>
         </div>

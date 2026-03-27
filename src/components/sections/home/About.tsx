@@ -23,7 +23,7 @@ export default function About() {
         </p>
       </div>
       <div className="mx-auto mt-10 max-w-3xl max-w-7xl justify-center">
-        <div className="flex flex-wrap gap-x-8 gap-y-6 text-base/7 font-semibold text-gray-900 justify-center md:flex lg:gap-x-10">
+        <div className="flex flex-wrap mx-4 lg:mx-0 gap-x-8 gap-y-6 text-base/7 font-semibold text-gray-900 justify-center md:flex lg:gap-x-10">
           {links.map((link) => (
             <a
               key={link.name}
