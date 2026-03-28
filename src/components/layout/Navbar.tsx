@@ -8,8 +8,6 @@ import { usePathname } from "next/navigation";
 import {
   HiTruck,
   HiCalendarDays,
-  HiMap,
-  HiArrowsRightLeft,
   HiBuildingOffice,
   HiBars3,
   HiXMark,
@@ -45,8 +43,6 @@ export default function Navbar() {
   const menu = [
     { name: "Trucks", href: "/trucks", icon: HiTruck },
     { name: "Reserve", href: "/reservation", icon: HiCalendarDays },
-    { name: "Map", href: "/map", icon: HiMap },
-    { name: "Compare", href: "/compare", icon: HiArrowsRightLeft },
     {
       name: "Company",
       icon: HiBuildingOffice,

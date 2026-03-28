@@ -55,18 +55,6 @@ export default function Footer() {
                 Reserve Truck
               </Link>
             </li>
-
-            <li>
-              <Link href="/map" className="hover:text-white">
-                Truck Map
-              </Link>
-            </li>
-
-            <li>
-              <Link href="/compare" className="hover:text-white">
-                Compare Trucks
-              </Link>
-            </li>
           </ul>
         </div>
 
