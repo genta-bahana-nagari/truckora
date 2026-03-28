@@ -50,15 +50,15 @@ export default function HeroSection() {
       <div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="relative w-full h-[65vh] md:h-auto md:aspect-[21/9] overflow-hidden"
+        className="relative w-full h-[65vh] md:h-auto md:aspect-21/9 overflow-hidden"
       >
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-700 ${
+            className={`absolute inset-0 transition-all duration-700 ${
               index === current
-                ? "pointer-events-auto opacity-100 scale-100"
-                : "pointer-events-none opacity-0 scale-105"
+                ? "opacity-100 translate-x-0 scale-100"
+                : "opacity-0 translate-x-8 scale-105"
             }`}
           >
             <Image
@@ -66,13 +66,19 @@ export default function HeroSection() {
               alt={slide.title}
               fill
               priority={index === 0}
-              className={`object-cover trainsition-transform duration-[5000ms] ease-linear ${
+              className={`object-cover transition-transform duration-5000 ease-linear ${
                 index === current ? "scale-100" : "scale-110"
               }`}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent z-0" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent z-0" />
             <div className="absolute inset-0 flex items-end md:items-center md:px-24 pb-12 md:pb-0">
-              <div className="max-w-md md:max-w-2xl px-5 md:px-12 text-white">
+              <div
+                className={`max-w-md md:max-w-2xl px-5 md:px-12 text-white transition-all duration-700 delay-200 ${
+                  index === current
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-6"
+                }`}
+              >
                 <h1 className="text-xl sm:text-2xl md:text-5xl font-bold mb-2 md:mb-4">
                   {slide.title}
                 </h1>
@@ -83,14 +89,14 @@ export default function HeroSection() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   <a
                     href="/reservation"
-                    className="border border-white bg-black/20 text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-gray-200 hover:text-black transition duration-300"
+                    className="border border-white/30 bg-white/10 backdrop-blur-md text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-white hover:text-black transition duration-300"
                   >
                     Reserve Truck
                   </a>
 
                   <a
                     href="trucks"
-                    className="border border-gray-200 bg-gray-200 text-black px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-black/20 hover:text-white transition duration-300"
+                    className="bg-white text-black px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-gray-200 transition duration-300"
                   >
                     Browse Trucks
                   </a>
@@ -102,14 +108,14 @@ export default function HeroSection() {
 
         <button
           onClick={prev}
-          className="cursor-pointer absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-1.5 md:p-2 rounded-full"
+          className="cursor-pointer absolute left-2 md:left-4 top-1/2 -translate-y-1/2 backdrop-blur-md bg-white/20 hover:bg-white/40 text-white p-2 md:p-3 rounded-full transition-all duration-300"
         >
           <MdNavigateBefore />
         </button>
 
         <button
           onClick={next}
-          className="cursor-pointer absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-white p-1.5 md:p-2 rounded-full"
+          className="cursor-pointer absolute right-2 md:right-4 top-1/2 -translate-y-1/2 backdrop-blur-md bg-white/20 hover:bg-white/40 text-white p-2 md:p-3 rounded-full transition-all duration-300"
         >
           <MdNavigateNext />
         </button>

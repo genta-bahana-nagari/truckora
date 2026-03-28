@@ -1,11 +1,24 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 import { trucks } from "@/data/truck/trucks";
-import Link from "next/link";
 
 export default function Featured() {
   const featuredTrucks = trucks.slice(0, 4);
+
+  const container = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
 
   return (
     <section
@@ -13,55 +26,84 @@ export default function Featured() {
       className="relative isolate overflow-hidden justify-center bg-white py-20 sm:py-26"
     >
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-lg lg:text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="text-center mb-16"
+        >
+          <motion.h2
+            variants={item}
+            className="text-lg lg:text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+          >
             Our Available Fleet
-          </h2>
-          <p className="mt-4 text-sm lg:text-lg text-gray-600">
+          </motion.h2>
+
+          <motion.p
+            variants={item}
+            className="mt-4 text-sm lg:text-lg text-gray-600"
+          >
             Explore our fleet of dependable trucks built to move your goods
             safely, efficiently, and on time.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
+          className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+        >
           {featuredTrucks.map((truck) => (
-            <Link
-              href={`/trucks/${truck.id}`}
-              target="blank"
+            <motion.div
               key={truck.id}
-              className="mx-4 md:mx-0 group relative cursor-pointer rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:ring-2
-              hover:ring-black/5 transition-all duration-200"
+              variants={item}
+              className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm transition-shadow duration-200 hover:shadow-lg hover:ring-2 hover:ring-black/5"
             >
-              <div className="aspect-square w-full overflow-hidden rounded-t-2xl bg-gray-200">
-                <Image
-                  src={truck.image}
-                  alt={truck.name}
-                  width={400}
-                  height={200}
-                  className="h-full w-full object-cover object-center group-hover:opacity-90 transition-opacity duration-200"
-                />
-              </div>
+              <Link
+                href={`/trucks/${truck.id}`}
+                target="_blank"
+                className="block"
+              >
+                <div className="aspect-square w-full bg-gray-200">
+                  <Image
+                    src={truck.image}
+                    alt={truck.name}
+                    width={400}
+                    height={200}
+                    className="h-full w-full object-cover object-center transition-opacity duration-200 group-hover:opacity-90"
+                  />
+                </div>
 
-              <div className="mt-4 px-2 pb-4">
-                <h3 className="text-md font-medium text-gray-900">
-                  {truck.name}
-                </h3>
-                <p className="text-sm text-gray-500">
-                  {truck.brand} - {truck.series}
-                </p>
-              </div>
-            </Link>
+                <div className="mt-4 px-2 pb-4">
+                  <h3 className="text-md font-medium text-gray-900">
+                    {truck.name}
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    {truck.brand} - {truck.series}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        <div className="flex flex-1 flex-col justify-center items-center my-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ delay: 0.5 }}
+          className="flex flex-1 flex-col justify-center items-center my-12"
+        >
           <a
             href="trucks"
-            className="border border-gray-700 bg-gray-700 text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-black hover:border-black transition duration-300"
+            className="border border-black bg-black text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium
+            hover:bg-gray-800 hover:border-gray-800 transition duration-300"
           >
             Browse Trucks
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
