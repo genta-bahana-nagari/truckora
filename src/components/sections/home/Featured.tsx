@@ -53,7 +53,7 @@ export default function Featured() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
+          className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 px-6 lg:px-0 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8"
         >
           {featuredTrucks.map((truck) => (
             <motion.div
@@ -101,7 +101,7 @@ export default function Featured() {
             className="border border-black bg-black text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium
             hover:bg-gray-800 hover:border-gray-800 transition duration-300"
           >
-            Browse Trucks
+            See More Trucks
           </a>
         </motion.div>
       </div>
