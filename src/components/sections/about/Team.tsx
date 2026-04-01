@@ -4,10 +4,26 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const team = [
-  { name: "Alice Johnson", role: "CEO & Founder", image: "/images/team/alice.jpg" },
-  { name: "Bob Smith", role: "CTO", image: "/images/team/bob.jpg" },
-  { name: "Carla Lee", role: "Head of Operations", image: "/images/team/carla.jpg" },
-  { name: "David Kim", role: "Marketing Lead", image: "/images/team/david.jpg" },
+  {
+    name: "Alice Johnson",
+    role: "CEO & Founder",
+    image: "https://randomuser.me/api/portraits/women/2.jpg",
+  },
+  {
+    name: "Bob Smith",
+    role: "CTO",
+    image: "https://randomuser.me/api/portraits/men/2.jpg",
+  },
+  {
+    name: "Carla Lee",
+    role: "Head of Operations",
+    image: "https://randomuser.me/api/portraits/women/21.jpg",
+  },
+  {
+    name: "David Kim",
+    role: "Marketing Lead",
+    image: "https://randomuser.me/api/portraits/men/12.jpg",
+  },
 ];
 
 export default function Team() {
@@ -30,8 +46,8 @@ export default function Team() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-gray-600 max-w-2xl mx-auto"
         >
-          Our passionate team works tirelessly to make Truckora the most reliable
-          and user-friendly truck reservation platform.
+          Our passionate team works tirelessly to make Truckora the most
+          reliable and user-friendly truck reservation platform.
         </motion.p>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
@@ -42,15 +58,18 @@ export default function Team() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white rounded-2xl p-6 shadow text-center"
+              className="cursor-pointer bg-white rounded-xl p-6 shadow-md text-center hover:z-10 hover:shadow-lg transition duration-300"
             >
               <Image
-                fill
                 src={member.image}
                 alt={member.name}
-                className="w-32 h-32 mx-auto rounded-full object-cover"
+                width={128}
+                height={128}
+                className="mx-auto rounded-full object-cover"
               />
-              <h3 className="mt-4 text-lg font-semibold text-gray-900">{member.name}</h3>
+              <h3 className="mt-4 text-lg font-semibold text-gray-900">
+                {member.name}
+              </h3>
               <p className="mt-1 text-sm text-gray-600">{member.role}</p>
             </motion.div>
           ))}
