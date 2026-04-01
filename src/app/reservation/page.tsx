@@ -11,6 +11,8 @@ export default function ReservePage() {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [weight, setWeight] = useState(0);
+  const [email, setEmail] = useState("");
+  const [contact, setContact] = useState("");
 
   const [showConfirm, setShowConfirm] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
@@ -52,11 +54,15 @@ export default function ReservePage() {
           startDate={startDate}
           endDate={endDate}
           weight={weight}
+          email={email}
+          contact={contact}
           onPickupChange={setPickup}
           onDropoffChange={setDropoff}
           onStartDateChange={setStartDate}
           onEndDateChange={setEndDate}
           onWeightChange={setWeight}
+          onEmailChange={setEmail}
+          onContactChange={setContact}
         />
 
         <div className="space-y-3">
@@ -108,11 +114,19 @@ export default function ReservePage() {
               <p>
                 <strong>Duration:</strong> {days} days
               </p>
+              <hr className="my-4 border border-gray-200" />
               <p>
                 <strong>Truck:</strong> {selectedTruck?.name}
               </p>
               <p>
                 <strong>Total:</strong> ${totalPrice}
+              </p>
+              <hr className="my-4 border border-gray-200" />
+              <p>
+                <strong>Email:</strong> {email}
+              </p>
+              <p>
+                <strong>Contact:</strong> {contact}
               </p>
             </div>
 

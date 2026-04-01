@@ -1,6 +1,8 @@
 "use client";
 
 import { FiMapPin, FiCalendar, FiPackage } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
 
 type Props = {
   pickup: string;
@@ -8,11 +10,16 @@ type Props = {
   startDate: string;
   endDate: string;
   weight: number;
+  email: string;
+  contact: string;
   onPickupChange: (val: string) => void;
   onDropoffChange: (val: string) => void;
   onStartDateChange: (val: string) => void;
   onEndDateChange: (val: string) => void;
   onWeightChange: (val: number) => void;
+  
+  onEmailChange: (val: string) => void;
+  onContactChange: (val: string) => void;
 };
 
 export default function ReservationForm({
@@ -21,11 +28,15 @@ export default function ReservationForm({
   startDate,
   endDate,
   weight,
+  email,
+  contact,
   onPickupChange,
   onDropoffChange,
   onStartDateChange,
   onEndDateChange,
   onWeightChange,
+  onEmailChange,
+  onContactChange,
 }: Props) {
   return (
     <div className="bg-white border border-gray-100 shadow-md rounded-2xl p-6 space-y-6">
@@ -115,6 +126,40 @@ export default function ReservationForm({
             <span className="absolute right-3 top-2.5 text-sm text-gray-400">
               tons
             </span>
+          </div>
+        </div>
+
+        <div className="md:col-span-2 grid md:grid-cols-2 gap-5">
+          <div>
+            <label className="text-sm font-medium text-gray-600">
+              Your Email
+            </label>
+            <div className="relative mt-1">
+              <MdOutlineEmail className="absolute left-3 top-3 text-gray-400" />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => onEmailChange(e.target.value)} 
+                className="w-full pl-10 pr-3 py-2.5 rounded-lg border border-gray-200 text-sm
+                focus:ring-2 focus:ring-gray-800 focus:border-transparent outline-none transition"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="text-sm font-medium text-gray-600">
+              Your Contact
+            </label>
+            <div className="relative mt-1">
+              <FaPhone className="absolute left-3 top-3 text-gray-400" />
+              <input
+                type="text"
+                value={contact}
+                onChange={(e) => onContactChange(e.target.value)}
+                className="w-full pl-10 pr-3 py-2.5 rounded-lg border border-gray-200 text-sm
+                focus:ring-2 focus:ring-gray-800 focus:border-transparent outline-none transition"
+              />
+            </div>
           </div>
         </div>
       </div>
