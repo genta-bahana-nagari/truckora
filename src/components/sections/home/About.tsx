@@ -11,7 +11,7 @@ export default function About() {
       id="about"
       className="relative isolate overflow-hidden bg-white py-20 sm:py-26"
     >
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-5xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +38,7 @@ export default function About() {
         </motion.p>
       </div>
 
-      <div className="mx-auto mt-10 max-w-3xl px-6 lg:px-0 text-center">
+      <div className="mx-auto mt-10 max-w-3xl lg:max-w-5xl px-6 lg:px-0 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
