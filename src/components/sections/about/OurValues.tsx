@@ -11,7 +11,7 @@ export const values = [
 
 export default function OurValues() {
   return (
-    <section className="bg-white py-20 px-6 md:px-10">
+    <section id="our-values" className="bg-white py-20 px-6 md:px-10">
       <div className="max-w-6xl mx-auto text-center space-y-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
