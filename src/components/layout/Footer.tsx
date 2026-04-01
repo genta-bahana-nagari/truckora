@@ -13,7 +13,7 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-neutral-900 text-gray-300 mt-20">
-      <div className="max-w-screen-xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-4">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-4">
         <div>
           <h2 className="text-xl font-bold text-white mb-4">Truckora</h2>
           <p className="text-sm leading-relaxed">
