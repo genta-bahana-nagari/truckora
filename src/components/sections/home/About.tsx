@@ -27,7 +27,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-6 md:mx-0 mt-4 md:mt-8 text-sm sm:text-base md:text-lg font-medium text-gray-700 sm:text-xl/8"
+          className="mx-6 md:mx-0 mt-4 md:mt-8 text-sm sm:text-base md:text-lg font-medium text-gray-700"
         >
           Truckora is a modern truck reservation platform that connects businesses
           and individuals with reliable trucks for transport, logistics, and moving
