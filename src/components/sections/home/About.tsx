@@ -38,7 +38,7 @@ export default function About() {
         </motion.p>
       </div>
 
-      <div className="mx-auto mt-10 max-w-3xl md:max-w-7xl text-center">
+      <div className="mx-auto mt-10 max-w-3xl px-6 lg:px-0 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
