@@ -25,7 +25,7 @@ export const positions = [
 
 export default function OpenPositions() {
   return (
-    <section id="open-positions" className="bg-white py-24 px-6 md:px-10">
+    <section id="open-positions" className="relative isolate overflow-hidden bg-white py-20 sm:py-26 my-24 px-6 md:px-10 text-center scroll-mt-24">
       <div className="max-w-6xl mx-auto text-center space-y-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

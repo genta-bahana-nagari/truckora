@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="bg-white py-24 px-6 md:px-10 text-center">
+    <section className="relative isolate overflow-hidden bg-white py-20 sm:py-26 my-24 px-6 md:px-10 text-center">
       <div className="max-w-4xl mx-auto space-y-6">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}

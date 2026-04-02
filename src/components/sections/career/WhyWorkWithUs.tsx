@@ -27,7 +27,7 @@ const benefits = [
 
 export default function WhyWorkWithUs() {
   return (
-    <section className="bg-gray-50 py-24 px-6 md:px-10">
+    <section className="bg-gray-50 py-16 px-6 md:px-10">
       <div className="max-w-6xl mx-auto text-center space-y-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
