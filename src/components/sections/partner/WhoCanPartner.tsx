@@ -1,9 +1,8 @@
-import React from 'react'
+"use client"
 
-const WhoCanPartner = () => {
+export default function WhoCanPartner() {
   return (
     <div>WhoCanPartner</div>
   )
 }
 
-export default WhoCanPartner

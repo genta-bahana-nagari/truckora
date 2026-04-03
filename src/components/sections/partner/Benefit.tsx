@@ -1,9 +1,7 @@
-import React from 'react'
+"use client";
 
-const Benefit = () => {
+export default function Benefit() {
   return (
     <div>Benefit</div>
   )
 }
-
-export default Benefit

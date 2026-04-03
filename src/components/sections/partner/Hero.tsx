@@ -1,9 +1,7 @@
-import React from 'react'
+"use client"
 
-const Hero = () => {
+export default function Hero () {
   return (
     <div>Hero</div>
   )
 }
-
-export default Hero
