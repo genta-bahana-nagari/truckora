@@ -5,7 +5,7 @@ import { siteConfig } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section className="bg-white py-24 px-6 md:px-10">
+    <section id="hero" className="bg-white py-24 px-6 md:px-10">
       <div className="max-w-4xl mx-auto text-center space-y-6">
         <motion.p
           initial={{ opacity: 0, y: 10 }}

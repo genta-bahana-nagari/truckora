@@ -13,7 +13,7 @@ import {
 export default function Footer() {
   return (
     <footer className="bg-neutral-900 text-gray-300 mt-20">
-      <div className="max-w-screen-xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-4">
+      <div className="max-w-7xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-4">
         <div>
           <h2 className="text-xl font-bold text-white mb-4">Truckora</h2>
           <p className="text-sm leading-relaxed">
@@ -111,7 +111,7 @@ export default function Footer() {
             </li>
 
             <li>
-              <Link href="/company/privacy" className="hover:text-white">
+              <Link href="/company/privacy-policy" className="hover:text-white">
                 Privacy Policy
               </Link>
             </li>
@@ -120,7 +120,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-neutral-700">
-        <div className="max-w-screen-xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex gap-4 text-2xl">
             <FaCcVisa />
             <FaCcMastercard />

@@ -1,9 +1,7 @@
-import React from 'react'
+"use client";
 
-const CTA = () => {
+export default function CTA() {
   return (
     <div>CTA</div>
   )
 }
-
-export default CTA

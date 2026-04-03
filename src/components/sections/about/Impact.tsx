@@ -5,7 +5,7 @@ import { stats } from "@/data/misc/stats";
 
 export default function Impact() {
   return (
-    <section className="bg-gray-50 py-20 px-6 md:px-10">
+    <section id="impact" className="bg-gray-50 py-20 px-6 md:px-10">
       <div className="max-w-6xl mx-auto space-y-12">
         <div className="text-center space-y-3">
           <motion.h2

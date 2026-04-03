@@ -11,7 +11,7 @@ export default function About() {
       id="about"
       className="relative isolate overflow-hidden bg-white py-20 sm:py-26"
     >
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-5xl text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-6 md:mx-0 mt-4 md:mt-8 text-sm sm:text-base md:text-lg font-medium text-gray-700 sm:text-xl/8"
+          className="mx-6 md:mx-0 mt-4 md:mt-8 text-sm sm:text-base md:text-lg font-medium text-gray-700"
         >
           Truckora is a modern truck reservation platform that connects businesses
           and individuals with reliable trucks for transport, logistics, and moving
@@ -38,7 +38,7 @@ export default function About() {
         </motion.p>
       </div>
 
-      <div className="mx-auto mt-10 max-w-3xl md:max-w-7xl text-center">
+      <div className="mx-auto mt-10 max-w-3xl lg:max-w-5xl px-6 lg:px-0 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

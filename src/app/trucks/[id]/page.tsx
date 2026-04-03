@@ -72,7 +72,7 @@ export default function TruckPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <div className="relative w-full aspect-video md:aspect-[16/10] rounded-xl overflow-hidden">
+        <div className="relative w-full aspect-video md:aspect-16/10 rounded-xl overflow-hidden">
           <Image
             src={truck.image}
             alt={truck.name}

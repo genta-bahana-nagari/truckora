@@ -1,9 +1,8 @@
-import React from 'react'
+"use client"
 
-const PartnerTypes = () => {
+export default function PartnerTypes() {
   return (
     <div>PartnerTypes</div>
   )
 }
 
-export default PartnerTypes
