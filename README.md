@@ -2,21 +2,47 @@
 
 ## 🚀 About the Project
 
- Truck reservation platform for your logistics, transportation, and moving services. Built using **NextJS 16** along with **Tailwind CSS**. It showcases my skills, projects, and experiences in an interactive and modern UI.
-
----
-
-## 🛠️ Tech Stack
-
-- **Frontend:** NextJS 16, Tailwind
-- **Deployment:** Vercel, Docker (do it with your config)
+Truck reservation platform for your logistics, transportation, and moving services. Built using **NextJS 16** along with **Tailwind CSS**. It showcases my skills, projects, and experiences in an interactive and modern UI.
 
 ---
 
 ## ✨ Features
 
 - Fully responsive design with Tailwind CSS
-- Smooth animations and transitions
+- Smooth animations and optimized transitions
+- Dynamic product showcase with images, descriptions, and reviews
+- Contact form as mock up interaction
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- **Framework**: Next.js 16 with App Router
+- **Language**: TypeScript
+- **UI Library**: React 19
+- **Styling**: Tailwind CSS
+
+### Backend
+
+- **Runtime**: Node.js
+- **Database**: None (static data)
+
+### Deployment Options
+
+- **Vercel**: Integrate your GitHub repo with Vercel
+- **Web Server**: Nginx with reverse proxy
+- **Process Manager**: PM2 for Node.js applications
+- **CDN**: Cloudflare for performance and security
+- **Docker**: Docker deployment is supported for this project with your own configs
+
+### Development Tools
+
+- **Version Control**: Git with GitHub
+- **Package Manager**: npm/yarn
+- **Code Quality**: ESLint, TypeScript
+- **Build Tool**: Next.js built-in bundler
 
 ---
 
