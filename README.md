@@ -2,7 +2,9 @@
 
 ## 🚀 About the Project
 
-Truck reservation platform for your logistics, transportation, and moving services. Built using **NextJS 16** along with **Tailwind CSS**. It showcases my skills, projects, and experiences in an interactive and modern UI.
+Truckora is a modern truck reservation platform designed for logistics, transportation, and moving services. It allows businesses and individuals to quickly browse available trucks, compare options, and reserve the right vehicle in minutes.
+
+Built with **Next.js** 16 and **Tailwind CSS**, Truckora showcases a smooth business flow mockup, highlighting how users can efficiently manage transportation needs. The platform emphasizes a clean, responsive UI and scalable architecture, making it ideal for logistics operations of any size.
 
 ---
 
