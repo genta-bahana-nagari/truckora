@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
             value: "truckora.vercel.app",
           },
         ],
-        destination: "https://www.truckora.gentabahana.web.id/:path*",
+        destination: "https://truckora.gentabahana.web.id/:path*",
         permanent: true,
       },
     ];
