@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Header() {
   return (
-    <section className="py-20 sm:py-26 text-center">
+    <section className="py-16 sm:py-26 text-center">
       <div className="mx-auto max-w-3xl px-6">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
