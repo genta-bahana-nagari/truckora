@@ -1,7 +1,7 @@
 "use client";
 
 type Truck = {
-  id: string;
+  slug: string;
   name: string;
   capacityTons: number;
   category: string;
@@ -28,11 +28,11 @@ export default function TruckListing({
     <div className="max-h-96 overflow-y-auto rounded-xl py-2 space-y-3">
       {trucks.map((truck) => (
         <div
-          key={truck.id}
-          onClick={() => onSelect(truck.id)}
+          key={truck.slug}
+          onClick={() => onSelect(truck.slug)}
           className={`p-4 border rounded-xl cursor-pointer transition
             ${
-              selectedTruckId === truck.id
+              selectedTruckId === truck.slug
                 ? "border-black bg-gray-50"
                 : "border-gray-200"
             }

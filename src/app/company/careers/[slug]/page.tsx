@@ -1,6 +1,4 @@
 import { notFound } from "next/navigation";
-import { positions } from "@/data/career/positions";
-import { JobMotion } from "./JobMotion";
 import Link from "next/link";
 import {
   FiMapPin,
@@ -8,6 +6,9 @@ import {
   FiArrowLeft,
   FiCheck,
 } from "react-icons/fi";
+
+import { JobMotion } from "./JobMotion";
+import { positions } from "@/data/career/positions";
 
 type Props = {
   params: {

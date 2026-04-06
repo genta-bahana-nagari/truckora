@@ -57,12 +57,12 @@ export default function Featured() {
         >
           {featuredTrucks.map((truck) => (
             <motion.div
-              key={truck.id}
+              key={truck.slug}
               variants={item}
               className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm transition-shadow duration-200 hover:shadow-lg hover:ring-2 hover:ring-black/5"
             >
               <Link
-                href={`/trucks/${truck.id}`}
+                href={`/trucks/${truck.slug}`}
                 target="_blank"
                 className="block"
               >

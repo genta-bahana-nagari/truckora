@@ -5,15 +5,15 @@ import { TruckListing } from "@/types/truckType";
 
 export function TruckCard({ truck }: { truck: TruckListing }) {
   const classCat = (truck.truckClass + " " + truck.category)
-    .replace("-", " ")
+    .replace(/-/g, " ")
     .split(" ")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
   return (
     <Link
-      href={`/trucks/${truck.id}`}
-      key={truck.id}
+      href={`/trucks/${truck.slug}`}
+      key={truck.slug}
       className="mx-4 my-auto md:mx-0 md:my-0 group relative cursor-pointer rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg hover:ring-2
         hover:ring-black/5 transition-all duration-200"
     >
@@ -23,7 +23,7 @@ export function TruckCard({ truck }: { truck: TruckListing }) {
           alt={truck.name}
           width={400}
           height={200}
-          className="group-hover:opacity-75 h-full w-full object-cover object-center group-hover:opacity-90 transition-opacity duration-200"
+          className="group-hover:opacity-90 h-full w-full object-cover object-center transition-opacity duration-200"
         />
       </div>
 

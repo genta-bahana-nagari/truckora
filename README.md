@@ -77,37 +77,53 @@ truckora/
 │   │   ├── company
 │   │   │   ├── about
 │   │   │   │   └── page.tsx
+│   │   │   │   
 │   │   │   ├── careers
+│   │   │   │   ├── [slug]
+│   │   │   │   │   ├── JobMotion.tsx
+│   │   │   │   │   └── page.tsx
 │   │   │   │   └── page.tsx
+│   │   │   │   
 │   │   │   ├── contact
 │   │   │   │   └── page.tsx
+│   │   │   │   
 │   │   │   ├── faq
 │   │   │   │   └── page.tsx
+│   │   │   │   
 │   │   │   ├── help
 │   │   │   │   └── page.tsx
+│   │   │   │   
 │   │   │   ├── partners
 │   │   │   │   └── page.tsx
+│   │   │   │   
 │   │   │   ├── privacy-policy
 │   │   │   │   └── page.tsx
+│   │   │   │   
 │   │   │   └── terms
 │   │   │       └── page.tsx
+│   │   │       
 │   │   ├── reservation
 │   │   │   └── page.tsx
+│   │   │
 │   │   ├── trucks
 │   │   │   ├── [id]
 │   │   │   │   └── page.tsx
 │   │   │   └── page.tsx
+│   │   │
 │   │   ├── layout.tsx
 │   │   ├── not-found.tsx
 │   │   ├── page.tsx
 │   │   ├── robots.ts
 │   │   └── sitemap.ts
+│   │
 │   ├── components
 │   │   ├── global
 │   │   │   └── ProjectInfo.tsx
+│   │   │  
 │   │   ├── layout
 │   │   │   ├── Footer.tsx
 │   │   │   └── Navbar.tsx
+│   │   │   
 │   │   └── sections
 │   │       ├── about
 │   │       │   ├── CTA.tsx
@@ -117,17 +133,20 @@ truckora/
 │   │       │   ├── OurValues.tsx
 │   │       │   ├── Team.tsx
 │   │       │   └── WhatWeDo.tsx
+│   │       │   
 │   │       ├── career
 │   │       │   ├── CTA.tsx
 │   │       │   ├── CultureValue.tsx
 │   │       │   ├── Hero.tsx
 │   │       │   ├── OpenPositions.tsx
 │   │       │   └── WhyWorkWithUs.tsx
+│   │       │   
 │   │       ├── contact
 │   │       │   ├── CTA.tsx
 │   │       │   ├── Form.tsx
 │   │       │   ├── Header.tsx
 │   │       │   └── Info.tsx
+│   │       │   
 │   │       ├── home
 │   │       │   ├── About.tsx
 │   │       │   ├── CTA.tsx
@@ -136,6 +155,7 @@ truckora/
 │   │       │   ├── Testimonials.tsx
 │   │       │   ├── TruckCategories.tsx
 │   │       │   └── WhyChooseUs.tsx
+│   │       │   
 │   │       ├── partner
 │   │       │   ├── Benefit.tsx
 │   │       │   ├── CTA.tsx
@@ -143,9 +163,11 @@ truckora/
 │   │       │   ├── HowItWorks.tsx
 │   │       │   ├── PartnerTypes.tsx
 │   │       │   └── WhoCanPartner.tsx
+│   │       │   
 │   │       ├── reservation
 │   │       │   ├── ReservationForm.tsx
 │   │       │   └── TruckListing.tsx
+│   │       │   gitignore
 │   │       └── trucks
 │   │           ├── TruckCard.tsx
 │   │           ├── TruckGrid.tsx
@@ -154,22 +176,32 @@ truckora/
 │   │           ├── TruckSidebar.tsx
 │   │           └── TruckSpecs.tsx
 │   ├── data
+│   │   ├── career
+│   │   │   └── positions.ts
+│   │   │   
 │   │   ├── misc
 │   │   │   ├── features.ts
 │   │   │   ├── links.ts
 │   │   │   └── stats.ts
+│   │   │   
 │   │   └── truck
 │   │       ├── category.ts
 │   │       ├── reviews.ts
 │   │       └── trucks.ts
+│   │   
 │   ├── lib
 │   │   └── site.ts
+│   │   
 │   ├── styles
 │   │   └── globals.css
+│   │   
 │   └── types
 │       ├── categoryType.ts
+│       ├── positionType.ts
 │       ├── reviewType.ts
 │       └── truckType.ts
+│
+├── .env
 ├── .gitignore
 ├── eslint.config.mjs
 ├── LICENSE

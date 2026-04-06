@@ -11,7 +11,7 @@ export type Transmission = "manual" | "automatic";
 export type TransmissionFilter = "all" | Transmission;
 
 export type TruckListing = {
-  id: string;
+  slug: string;
   name: string;
 
   brand: string;

@@ -3,7 +3,7 @@ import { Review } from "@/types/reviewType";
 export const reviews: Review[] = [
   {
     id: "review-1",
-    truckId: "truck-1",
+    truckId: "kamaz-6520-heavy-dump",
     user: "Michael T.",
     rating: 5,
     comment:
@@ -12,7 +12,7 @@ export const reviews: Review[] = [
   },
   {
     id: "review-2",
-    truckId: "truck-1",
+    truckId: "kamaz-6520-heavy-dump",
     user: "David K.",
     rating: 4,
     comment:
@@ -22,7 +22,7 @@ export const reviews: Review[] = [
 
   {
     id: "review-3",
-    truckId: "truck-2",
+    truckId: "volvo-fh16-long-haul",
     user: "Sarah L.",
     rating: 5,
     comment:
@@ -31,7 +31,7 @@ export const reviews: Review[] = [
   },
   {
     id: "review-4",
-    truckId: "truck-2",
+    truckId: "volvo-fh16-long-haul",
     user: "LogiTrans Co.",
     rating: 5,
     comment:
@@ -41,7 +41,7 @@ export const reviews: Review[] = [
 
   {
     id: "review-5",
-    truckId: "truck-3",
+    truckId: "isuzu-elf-cargo-box",
     user: "Andi Pratama",
     rating: 5,
     comment:
