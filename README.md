@@ -34,9 +34,6 @@ Built with **Next.js** 16 and **Tailwind CSS**, Truckora showcases a smooth busi
 ### Deployment Options
 
 - **Vercel**: Integrate your GitHub repo with Vercel
-- **Web Server**: Nginx with reverse proxy
-- **Process Manager**: PM2 for Node.js applications
-- **CDN**: Cloudflare for performance and security
 - **Docker**: Docker deployment is supported for this project with your own configs
 
 ### Development Tools
@@ -58,15 +55,21 @@ truckora/
 │   │   │   ├── truck1.png
 │   │   │   ├── truck2.png
 │   │   │   └── truck3.png
-│   │   ├── team
+│   │   │
 │   │   ├── trucks
 │   │   │   ├── isuzu
 │   │   │   │   └── isuzu-elf-box.jpg
+│   │   │   │   
 │   │   │   ├── kamaz
 │   │   │   │   └── kamaz-6520-dump.jpg
-│   │   │   └── volvo
-│   │   │       └── volvo-fh16.jpg
+│   │   │   │   
+│   │   │   ├── kamaz
+│   │   │   │   └── volvo-fh16.jpg
+│   │   │   │   
+│   │   │   └── other-truck-images/
+│   │   │       
 │   │   └── og-image.png
+│   │   
 │   ├── apple-touch-icon.png
 │   ├── favicon-16x16.png
 │   ├── icon-circle-16.png
@@ -106,8 +109,9 @@ truckora/
 │   │   │   └── page.tsx
 │   │   │
 │   │   ├── trucks
-│   │   │   ├── [id]
-│   │   │   │   └── page.tsx
+│   │   │   ├── [slug]
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── TruckMotion.tsx
 │   │   │   └── page.tsx
 │   │   │
 │   │   ├── layout.tsx
@@ -167,7 +171,7 @@ truckora/
 │   │       ├── reservation
 │   │       │   ├── ReservationForm.tsx
 │   │       │   └── TruckListing.tsx
-│   │       │   gitignore
+│   │       │   
 │   │       └── trucks
 │   │           ├── TruckCard.tsx
 │   │           ├── TruckGrid.tsx
