@@ -33,7 +33,7 @@ export default function ReservePage() {
     return true;
   });
 
-  const selectedTruck = filteredTrucks.find((t) => t.id === selectedTruckId);
+  const selectedTruck = filteredTrucks.find((t) => t.slug === selectedTruckId);
   const totalPrice = selectedTruck && days > 0 ? selectedTruck.pricePerDay * days : 0;
 
   return (
