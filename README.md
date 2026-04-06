@@ -167,7 +167,7 @@ truckora/
 │   │       ├── reservation
 │   │       │   ├── ReservationForm.tsx
 │   │       │   └── TruckListing.tsx
-│   │       │   
+│   │       │   gitignore
 │   │       └── trucks
 │   │           ├── TruckCard.tsx
 │   │           ├── TruckGrid.tsx
