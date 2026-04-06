@@ -2,7 +2,7 @@ import { TruckListing } from "@/types/truckType";
 
 export const trucks: TruckListing[] = [
   {
-    id: "truck-1",
+    slug: "kamaz-6520-heavy-dump",
     name: "Kamaz 6520 Heavy Dump",
     brand: "Kamaz",
     series: "6520",
@@ -21,9 +21,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-2",
+    slug: "volvo-fh16-long-haul",
     name: "Volvo FH16 Long Haul",
     brand: "Volvo",
     series: "FH16",
@@ -42,9 +41,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-3",
+    slug: "isuzu-elf-cargo-box",
     name: "Isuzu Elf Cargo Box",
     brand: "Isuzu",
     series: "Elf",
@@ -63,9 +61,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-4",
+    slug: "fuso-canter-box-carrier",
     name: "Fuso Canter Box Carrier",
     brand: "Mitsubishi Fuso",
     series: "Canter",
@@ -84,9 +81,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-5",
+    slug: "hino-dutro-cargo-box",
     name: "Hino Dutro Cargo Box",
     brand: "Hino",
     series: "Dutro",
@@ -105,9 +101,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-6",
+    slug: "scania-r500-flatbed",
     name: "Scania R500 Flatbed",
     brand: "Scania",
     series: "R500",
@@ -126,9 +121,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-7",
+    slug: "ud-quester-dump-truck",
     name: "UD Quester Dump Truck",
     brand: "UD Trucks",
     series: "Quester",
@@ -147,9 +141,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-8",
+    slug: "mercedes-actros-tanker",
     name: "Mercedes Actros Tanker",
     brand: "Mercedes-Benz",
     series: "Actros",
@@ -168,9 +161,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-9",
+    slug: "toyota-dyna-refrigerated",
     name: "Toyota Dyna Refrigerated",
     brand: "Toyota",
     series: "Dyna",
@@ -189,9 +181,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-10",
+    slug: "man-tgs-logging-truck",
     name: "MAN TGS Logging Truck",
     brand: "MAN",
     series: "TGS",
@@ -210,9 +201,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-11",
+    slug: "hyundai-xcient-car-carrier",
     name: "Hyundai Xcient Car Carrier",
     brand: "Hyundai",
     series: "Xcient",
@@ -231,9 +221,8 @@ export const trucks: TruckListing[] = [
     driverIncluded: true,
     fuelType: "diesel",
   },
-
   {
-    id: "truck-12",
+    slug: "volvo-fl-electric-box",
     name: "Volvo FL Electric Box",
     brand: "Volvo",
     series: "FL Electric",
