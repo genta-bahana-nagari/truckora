@@ -55,21 +55,14 @@ truckora/
 │   │   │   ├── truck1.png
 │   │   │   ├── truck2.png
 │   │   │   └── truck3.png
-│   │   │
 │   │   ├── trucks
 │   │   │   ├── isuzu
 │   │   │   │   └── isuzu-elf-box.jpg
-│   │   │   │   
 │   │   │   ├── kamaz
 │   │   │   │   └── kamaz-6520-dump.jpg
-│   │   │   │   
-│   │   │   ├── kamaz
-│   │   │   │   └── volvo-fh16.jpg
-│   │   │   │   
-│   │   │   └── other-truck-images/
-│   │   │       
+│   │   │   └── volvo
+│   │   │       └── volvo-fh16.jpg
 │   │   └── og-image.png
-│   │   
 │   ├── apple-touch-icon.png
 │   ├── favicon-16x16.png
 │   ├── icon-circle-16.png
@@ -80,38 +73,31 @@ truckora/
 │   │   ├── company
 │   │   │   ├── about
 │   │   │   │   └── page.tsx
-│   │   │   │   
 │   │   │   ├── careers
 │   │   │   │   ├── [slug]
 │   │   │   │   │   ├── JobMotion.tsx
 │   │   │   │   │   └── page.tsx
 │   │   │   │   └── page.tsx
-│   │   │   │   
 │   │   │   ├── contact
 │   │   │   │   └── page.tsx
-│   │   │   │   
 │   │   │   ├── faq
 │   │   │   │   └── page.tsx
-│   │   │   │   
 │   │   │   ├── help
 │   │   │   │   └── page.tsx
-│   │   │   │   
 │   │   │   ├── partners
 │   │   │   │   └── page.tsx
-│   │   │   │   
 │   │   │   ├── privacy-policy
 │   │   │   │   └── page.tsx
-│   │   │   │   
 │   │   │   └── terms
 │   │   │       └── page.tsx
-│   │   │       
+│   │   │
 │   │   ├── reservation
 │   │   │   └── page.tsx
 │   │   │
 │   │   ├── trucks
 │   │   │   ├── [slug]
-│   │   │   │   ├── page.tsx
-│   │   │   │   └── TruckMotion.tsx
+│   │   │   │   ├── TruckMotion.tsx
+│   │   │   │   └── page.tsx
 │   │   │   └── page.tsx
 │   │   │
 │   │   ├── layout.tsx
@@ -119,15 +105,15 @@ truckora/
 │   │   ├── page.tsx
 │   │   ├── robots.ts
 │   │   └── sitemap.ts
-│   │
+│   │   
 │   ├── components
 │   │   ├── global
 │   │   │   └── ProjectInfo.tsx
-│   │   │  
+│   │   │
 │   │   ├── layout
 │   │   │   ├── Footer.tsx
 │   │   │   └── Navbar.tsx
-│   │   │   
+│   │   │
 │   │   └── sections
 │   │       ├── about
 │   │       │   ├── CTA.tsx
@@ -137,20 +123,20 @@ truckora/
 │   │       │   ├── OurValues.tsx
 │   │       │   ├── Team.tsx
 │   │       │   └── WhatWeDo.tsx
-│   │       │   
+│   │       │
 │   │       ├── career
 │   │       │   ├── CTA.tsx
 │   │       │   ├── CultureValue.tsx
 │   │       │   ├── Hero.tsx
 │   │       │   ├── OpenPositions.tsx
 │   │       │   └── WhyWorkWithUs.tsx
-│   │       │   
+│   │       │
 │   │       ├── contact
 │   │       │   ├── CTA.tsx
 │   │       │   ├── Form.tsx
 │   │       │   ├── Header.tsx
 │   │       │   └── Info.tsx
-│   │       │   
+│   │       │
 │   │       ├── home
 │   │       │   ├── About.tsx
 │   │       │   ├── CTA.tsx
@@ -159,7 +145,7 @@ truckora/
 │   │       │   ├── Testimonials.tsx
 │   │       │   ├── TruckCategories.tsx
 │   │       │   └── WhyChooseUs.tsx
-│   │       │   
+│   │       │
 │   │       ├── partner
 │   │       │   ├── Benefit.tsx
 │   │       │   ├── CTA.tsx
@@ -167,11 +153,11 @@ truckora/
 │   │       │   ├── HowItWorks.tsx
 │   │       │   ├── PartnerTypes.tsx
 │   │       │   └── WhoCanPartner.tsx
-│   │       │   
+│   │       │
 │   │       ├── reservation
 │   │       │   ├── ReservationForm.tsx
 │   │       │   └── TruckListing.tsx
-│   │       │   
+│   │       │
 │   │       └── trucks
 │   │           ├── TruckCard.tsx
 │   │           ├── TruckGrid.tsx
@@ -179,6 +165,7 @@ truckora/
 │   │           ├── TruckReviews.tsx
 │   │           ├── TruckSidebar.tsx
 │   │           └── TruckSpecs.tsx
+│   │
 │   ├── data
 │   │   ├── career
 │   │   │   └── positions.ts
@@ -205,16 +192,15 @@ truckora/
 │       ├── reviewType.ts
 │       └── truckType.ts
 │
-├── .env
+├── .env.example
 ├── .gitignore
-├── eslint.config.mjs
 ├── LICENSE
-├── next-env.d.ts
+├── README.md
+├── eslint.config.mjs
 ├── next.config.ts
 ├── package-lock.json
 ├── package.json
 ├── postcss.config.mjs
-├── README.md
 └── tsconfig.json
 ```
 
