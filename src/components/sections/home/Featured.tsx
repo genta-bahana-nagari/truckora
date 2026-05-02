@@ -93,7 +93,7 @@ export default function Featured() {
                 {/* Image Container */}
                 <div className="relative aspect-square w-full overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
                   <Image
-                    src={truck.image}
+                    src={truck.images?.[0] || "/images/placeholder-truck.jpg"}
                     alt={truck.name}
                     fill
                     className="object-cover object-center transition-transform duration-500 group-hover:scale-110"
