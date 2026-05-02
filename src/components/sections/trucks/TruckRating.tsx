@@ -1,27 +1,35 @@
+"use client";
+
 import { TruckListing } from "@/types/truckType";
-import { BsStarFill } from "react-icons/bs";
+import { BsStarFill, BsStarHalf, BsStar } from "react-icons/bs";
 
 export function TruckRating({ truck }: { truck: TruckListing }) {
-  const fullStars = Math.floor(truck.rating);
+  const rating = truck.rating;
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 >= 0.5;
   const totalStars = 5;
 
   return (
-    <div className="mt-6">
-      <h3 className="sr-only">Reviews</h3>
-      <div className="flex items-center">
-        <div className="flex items-center">
-          {[...Array(totalStars)].map((_, index) => (
-            <BsStarFill
-              key={index}
-              aria-hidden="true"
-              className={`h-5 w-5 ${
-                index < fullStars ? "text-gray-900" : "text-gray-200"
-              }`}
-            />
-          ))}
+    <div className="mt-4">
+      <div className="flex items-center gap-3 flex-wrap">
+        <div className="flex items-center gap-2">
+          <div className="bg-green-600 text-white px-2 py-0.5 rounded-md text-sm font-semibold">
+            {rating.toFixed(1)}
+          </div>
+          <div className="flex items-center gap-0.5">
+            {[...Array(totalStars)].map((_, index) => {
+              if (index < fullStars) {
+                return <BsStarFill key={index} className="w-4 h-4 text-yellow-400 fill-yellow-400" />;
+              } else if (index === fullStars && hasHalfStar) {
+                return <BsStarHalf key={index} className="w-4 h-4 text-yellow-400 fill-yellow-400" />;
+              } else {
+                return <BsStar key={index} className="w-4 h-4 text-gray-300" />;
+              }
+            })}
+          </div>
         </div>
-        <p className="ml-3 text-sm font-medium text-gray-800">
-          {truck.reviews} reviews
+        <p className="text-sm text-gray-500">
+          Based on <span className="font-semibold text-gray-700">{truck.reviews}</span> customer reviews
         </p>
       </div>
     </div>

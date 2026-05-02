@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 
 import {
   HiTruck,
@@ -11,14 +12,27 @@ import {
   HiBuildingOffice,
   HiBars3,
   HiXMark,
+  HiPhone,
+  HiChevronDown,
 } from "react-icons/hi2";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [companyOpen, setCompanyOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close desktop dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (window.innerWidth < 768) return;
@@ -51,153 +65,234 @@ export default function Navbar() {
         { name: "Careers", href: "/company/careers" },
         { name: "Partners", href: "/company/partners" },
         { name: "Contact", href: "/company/contact" },
+        { name: "FAQ", href: "/company/faq" },
+        { name: "Help", href: "/company/help" },
       ],
     },
   ];
 
   const linkStyle = (href: string) =>
-    `flex items-center gap-2 transition ${
+    `flex items-center gap-2 transition-all duration-200 rounded-lg px-3 py-2 ${
       pathname === href
-        ? "text-brand font-semibold"
-        : "text-heading hover:text-fg-brand"
+        ? "text-brand bg-brand/10 font-semibold"
+        : "text-gray-700 hover:text-brand hover:bg-gray-50"
     }`;
 
+  const isActivePath = (href: string) => pathname === href;
+
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-default bg-white">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between p-4">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-xl font-bold tracking-tight text-heading"
-        >
-          <Image src="/icon-circle.png" alt="Truckora" width={40} height={40} />
-          <span>Truckora</span>
-        </Link>
-
-        <div className="hidden md:flex items-center gap-8">
-          {menu.map((item) => {
-            const Icon = item.icon;
-
-            if (item.children) {
-              return (
-                <div key={item.name} className="relative">
-                  <button
-                    onClick={() => setCompanyOpen(!companyOpen)}
-                    className="flex items-center gap-2 text-heading hover:text-fg-brand cursor-pointer"
-                  >
-                    <Icon size={20} />
-                    {item.name}
-                  </button>
-
-                  {companyOpen && (
-                    <div
-                      ref={dropdownRef}
-                      className="absolute left-0 mt-3 w-56 rounded-lg border border-default bg-white shadow-lg"
-                    >
-                      <div className="flex flex-col p-2">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.href}
-                            href={child.href}
-                            className="px-3 py-2 rounded-md text-body hover:bg-black hover:text-white transition"
-                          >
-                            {child.name}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            }
-
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={linkStyle(item.href)}
-              >
-                <Icon size={20} />
-                {item.name}
-              </Link>
-            );
-          })}
-
-          <Link
-            href="/reservation"
-            onClick={() => setOpen(false)}
-            className="rounded-lg border border-black bg-brand px-4 py-2 font-medium transition hover:bg-black hover:text-white"
-          >
-            Reserve Truck
-          </Link>
-        </div>
-
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-md hover:bg-neutral-secondary-soft transition"
-          aria-label="Toggle menu"
-        >
-          {open ? <HiXMark size={26} /> : <HiBars3 size={26} />}
-        </button>
-      </div>
-
-      <div
-        className={`md:hidden border-t border-default bg-white overflow-hidden transition-all duration-300 ${
-          open ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+    <>
+      <nav
+        className={`fixed top-0 z-50 w-full transition-all duration-300 ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-100"
+            : "bg-white border-b border-gray-200"
         }`}
       >
-        <div className="flex flex-col p-4 gap-4">
-          {menu.map((item) => {
-            const Icon = item.icon;
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 lg:h-20">
+            {/* Logo */}
+            <Link
+              href="/"
+              className="flex items-center gap-3 group"
+              aria-label="Home"
+            >
+              <div className="relative">
+                <div className="absolute inset-0 bg-linear-to-r from-brand to-brand/70 rounded-xl blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
+                <Image
+                  src="/icon-circle.png"
+                  alt="Truckora"
+                  width={40}
+                  height={40}
+                  className="relative rounded-xl"
+                />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-xl font-bold bg-linear-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
+                  Truckora
+                </span>
+                <span className="text-xs text-gray-500 -mt-1 hidden sm:block">
+                  Logistics Simplified
+                </span>
+              </div>
+            </Link>
 
-            if (item.children) {
-              return (
-                <div key={item.name}>
-                  <button
-                    onClick={() => setCompanyOpen(!companyOpen)}
-                    className="flex items-center gap-2 w-full text-heading"
+            {/* Desktop Menu */}
+            <div className="hidden md:flex items-center gap-1 lg:gap-2">
+              {menu.map((item) => {
+                const Icon = item.icon;
+
+                if (item.children) {
+                  return (
+                    <div key={item.name} className="relative">
+                      <button
+                        onClick={() => setCompanyOpen(!companyOpen)}
+                        className={`flex items-center gap-2 px-3 py-2 rounded-lg transition-all duration-200 ${
+                          companyOpen
+                            ? "text-brand bg-brand/10"
+                            : "text-gray-700 hover:text-brand hover:bg-gray-50"
+                        }`}
+                        aria-expanded={companyOpen}
+                      >
+                        <Icon size={20} />
+                        <span>{item.name}</span>
+                        <HiChevronDown
+                          size={16}
+                          className={`transition-transform duration-200 ${
+                            companyOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+
+                      <AnimatePresence>
+                        {companyOpen && (
+                          <motion.div
+                            ref={dropdownRef}
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute left-0 mt-2 w-64 rounded-xl border border-gray-100 bg-white shadow-xl overflow-hidden"
+                          >
+                            <div className="py-2">
+                              {item.children.map((child) => (
+                                <Link
+                                  key={child.href}
+                                  href={child.href}
+                                  className={`flex items-center px-4 py-2.5 text-sm transition-colors ${
+                                    isActivePath(child.href)
+                                      ? "text-brand bg-brand/5 font-medium"
+                                      : "text-gray-700 hover:text-brand hover:bg-gray-50"
+                                  }`}
+                                >
+                                  {child.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={linkStyle(item.href)}
                   >
                     <Icon size={20} />
-                    {item.name}
-                  </button>
+                    <span>{item.name}</span>
+                  </Link>
+                );
+              })}
 
-                  {companyOpen && (
-                    <div className="ml-6 mt-2 flex flex-col gap-2">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          className="text-body hover:text-fg-brand"
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              );
-            }
-
-            return (
+              {/* CTA Button */}
               <Link
-                key={item.href}
-                href={item.href}
-                className={linkStyle(item.href)}
+                href="/reservation"
+                className="ml-2 bg-gray-800 hover:bg-black text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
               >
-                <Icon size={20} />
-                {item.name}
+                Book Now
               </Link>
-            );
-          })}
+            </div>
 
-          <Link
-            href="/reservation"
-            onClick={() => setOpen(false)}
-            className="mt-2 rounded-lg border border-black bg-brand px-4 py-2 text-center font-medium transition hover:bg-black hover:text-white"
-          >
-            Reserve Truck
-          </Link>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? (
+                <HiXMark size={24} className="text-gray-700" />
+              ) : (
+                <HiBars3 size={24} className="text-gray-700" />
+              )}
+            </button>
+          </div>
         </div>
-      </div>
-    </nav>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden overflow-hidden bg-white border-t border-gray-100"
+            >
+              <div className="px-4 py-4 space-y-1">
+                {menu.map((item) => {
+                  const Icon = item.icon;
+
+                  if (item.children) {
+                    return (
+                      <div key={item.name} className="space-y-2">
+                        <button
+                          onClick={() => setCompanyOpen(!companyOpen)}
+                          className="flex items-center justify-between w-full px-3 py-3 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+                        >
+                          <div className="flex items-center gap-3">
+                            <Icon size={20} />
+                            <span className="font-medium">{item.name}</span>
+                          </div>
+                          <HiChevronDown
+                            size={18}
+                            className={`transition-transform duration-200 ${
+                              companyOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        <AnimatePresence>
+                          {companyOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="ml-6 space-y-1 overflow-hidden"
+                            >
+                              {item.children.map((child) => (
+                                <Link
+                                  key={child.href}
+                                  href={child.href}
+                                  className={`block px-3 py-2.5 rounded-lg text-sm transition-colors ${
+                                    isActivePath(child.href)
+                                      ? "text-brand bg-brand/10 font-medium"
+                                      : "text-gray-600 hover:text-brand hover:bg-gray-50"
+                                  }`}
+                                >
+                                  {child.name}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    );
+                  }
+
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`flex items-center gap-3 px-3 py-3 rounded-lg transition-colors ${
+                        isActivePath(item.href)
+                          ? "text-brand bg-brand/10 font-semibold"
+                          : "text-gray-700 hover:bg-gray-50"
+                      }`}
+                    >
+                      <Icon size={20} />
+                      <span className="font-medium">{item.name}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>      {/* Spacer to prevent content from hiding under fixed navbar */}
+    </>
   );
 }
