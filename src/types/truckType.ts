@@ -24,7 +24,7 @@ export type TruckListing = {
 
   transmission: Transmission;
   pricePerDay: number;
-  image: string;
+  images: string[];
   available: boolean;
   rating: number;
   reviews: number;
