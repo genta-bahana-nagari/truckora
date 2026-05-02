@@ -284,7 +284,7 @@ export default function TruckPage({ params }: Props) {
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={() => setShowBookingModal(true)}
-                    className="flex-1 bg-linear-to-r from-brand to-brand/80 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105"
+                    className="flex-1 bg-gray-800 hover:bg-black cursor-pointer text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105"
                   >
                     Book This Truck
                   </button>
