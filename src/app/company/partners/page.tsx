@@ -47,7 +47,7 @@ export default function page() {
           </Link>
 
           <Link
-            href="/company/contact"
+            href="/contact"
             className="text-sm font-semibold text-gray-700 hover:text-gray-900 transition"
           >
             Contact Support
