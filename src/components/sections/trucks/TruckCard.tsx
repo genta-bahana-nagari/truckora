@@ -55,13 +55,13 @@ export function TruckCard({ truck }: { truck: TruckListing }) {
           )}
 
           {/* Badge */}
-          <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
-            <HiStar className="w-3 h-3 text-yellow-400 fill-yellow-400" />
+          <div className="absolute top-3 left-3 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-md flex items-center gap-1">
+            <HiStar className="w-3 h-3 text-white fill-white" />
             <span>{truck.rating}</span>
           </div>
 
           {/* Availability */}
-          <div className="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+          <div className="absolute top-3 right-3 bg-green-600 text-white text-xs px-2 py-1 rounded-md">
             Available
           </div>
         </div>
