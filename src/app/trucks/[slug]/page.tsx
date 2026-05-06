@@ -1,10 +1,9 @@
-// src/app/trucks/[slug]/page.tsx
 "use client";
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   RiArrowRightDoubleFill,
   RiCheckboxCircleLine,
@@ -32,8 +31,6 @@ type Props = {
 
 export default function TruckPage({ params }: Props) {
   const [selectedImage, setSelectedImage] = useState(0);
-  const [showBookingModal, setShowBookingModal] = useState(false);
-  const [rentalDays, setRentalDays] = useState(1);
   const [slug, setSlug] = useState<string | null>(null);
 
   useEffect(() => {
@@ -60,8 +57,7 @@ export default function TruckPage({ params }: Props) {
             Truck Not Found
           </h1>
           <p className="mt-6 text-lg font-medium text-gray-500 sm:text-xl/8">
-            Oops! The truck you`re looking for doesn`t exist in our
-            fleet.
+            Oops! The truck you`re looking for doesn`t exist in our fleet.
           </p>
           <Link
             href="/trucks"
@@ -86,7 +82,6 @@ export default function TruckPage({ params }: Props) {
     );
   }
 
-  const totalPrice = truck.pricePerDay * rentalDays;
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("en-US", {
       style: "currency",
@@ -243,51 +238,14 @@ export default function TruckPage({ params }: Props) {
                   <span className="text-gray-500">/ day</span>
                 </div>
 
-                {/* Rental Duration Selector */}
-                <div className="mt-6 p-4 bg-gray-50 rounded-xl">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Rental Duration
-                  </label>
-                  <div className="flex items-center gap-4">
-                    <button
-                      onClick={() => setRentalDays(Math.max(1, rentalDays - 1))}
-                      className="w-10 h-10 rounded-lg border border-gray-300 bg-white hover:bg-gray-50 transition-colors text-lg font-semibold"
-                    >
-                      -
-                    </button>
-                    <div className="flex-1 text-center">
-                      <span className="text-2xl font-semibold text-gray-900">
-                        {rentalDays}
-                      </span>
-                      <span className="text-gray-500 ml-1">
-                        day{rentalDays !== 1 ? "s" : ""}
-                      </span>
-                    </div>
-                    <button
-                      onClick={() => setRentalDays(rentalDays + 1)}
-                      className="w-10 h-10 rounded-lg border border-gray-300 bg-white hover:bg-gray-50 transition-colors text-lg font-semibold"
-                    >
-                      +
-                    </button>
-                  </div>
-                  <div className="mt-3 pt-3 border-t border-gray-200">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-600">Total price:</span>
-                      <span className="font-semibold text-gray-900">
-                        {formatPrice(totalPrice)}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
                 {/* Action Buttons */}
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <button
-                    onClick={() => setShowBookingModal(true)}
-                    className="flex-1 bg-gray-800 hover:bg-black cursor-pointer text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105"
+                  <Link
+                    href={`/reservation/${truck.slug}`}
+                    className="flex-1 align-center justify-center text-center bg-gray-800 hover:bg-black cursor-pointer text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all hover:scale-105"
                   >
                     Book This Truck
-                  </button>
+                  </Link>
                   <Link
                     href="/company/contact"
                     className="flex-1 text-center border border-gray-300 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 hover:border-brand transition-all"
@@ -423,78 +381,6 @@ export default function TruckPage({ params }: Props) {
           </motion.div>
         </div>
       </div>
-
-      {/* Booking Modal - Same as before */}
-      <AnimatePresence>
-        {showBookingModal && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setShowBookingModal(false)}
-              className="fixed inset-0 bg-black/50 z-50"
-            />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md bg-white rounded-2xl shadow-2xl z-50 overflow-hidden"
-            >
-              <div className="p-6">
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">
-                  Confirm Booking
-                </h2>
-                <p className="text-gray-500 mb-6">
-                  You&apos;re about to book this truck
-                </p>
-
-                <div className="space-y-3 mb-6">
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Truck</span>
-                    <span className="font-medium text-gray-900">
-                      {truck.name}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Daily rate</span>
-                    <span className="font-medium text-gray-900">
-                      {formatPrice(truck.pricePerDay)}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 border-b border-gray-100">
-                    <span className="text-gray-600">Rental days</span>
-                    <span className="font-medium text-gray-900">
-                      {rentalDays}
-                    </span>
-                  </div>
-                  <div className="flex justify-between py-2 pt-3">
-                    <span className="font-semibold text-gray-900">Total</span>
-                    <span className="font-bold text-xl text-brand">
-                      {formatPrice(totalPrice)}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex gap-3">
-                  <button
-                    onClick={() => setShowBookingModal(false)}
-                    className="flex-1 px-4 py-2 rounded-lg border border-gray-300 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
-                  >
-                    Cancel
-                  </button>
-                  <Link
-                    href={`/reservation?truck=${truck.slug}&days=${rentalDays}`}
-                    className="flex-1 bg-linear-to-r from-brand to-brand/80 text-white px-4 py-2 rounded-lg font-medium text-center hover:shadow-lg transition-all"
-                  >
-                    Continue to Reservation
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
     </TruckMotion>
   );
 }
