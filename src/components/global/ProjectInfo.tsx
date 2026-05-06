@@ -101,7 +101,7 @@ export default function ProjectInfo() {
               ))}
             </div>
 
-            <div className="p-6 text-sm text-gray-600 h-[220px] overflow-y-auto">
+            <div className="p-6 text-sm text-gray-600 h-55 overflow-y-auto">
               <AnimatePresence mode="wait">
                 {tab === "info" && (
                   <motion.div
