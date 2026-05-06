@@ -87,7 +87,6 @@ const TruckCategories = () => {
               >
                 <Link href={`/trucks?category=${category.slug}`}>
                   <div className="relative h-full rounded-2xl bg-white p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 overflow-hidden">
-
                     {/* Icon Container */}
                     <div className="relative">
                       <div className="mb-4 inline-flex rounded-xl bg-linearto-br from-brand/10 to-brand/5 p-3 group-hover:from-brand group-hover:to-brand/80 transition-all duration-300">
@@ -110,7 +109,6 @@ const TruckCategories = () => {
                         <HiArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
-
                   </div>
                 </Link>
               </motion.div>
@@ -131,10 +129,11 @@ const TruckCategories = () => {
               Need help choosing the right truck?
             </h3>
             <p className="text-gray-600 mb-6">
-              Our team is here to help you find the perfect vehicle for your needs
+              Our team is here to help you find the perfect vehicle for your
+              needs
             </p>
             <Link
-              href="/company/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 text-brand font-semibold hover:gap-3 transition-all group"
             >
               <span>Contact Our Experts</span>
@@ -153,7 +152,9 @@ const TruckCategories = () => {
         >
           <div className="flex flex-wrap justify-center gap-8 text-center">
             <div>
-              <p className="text-2xl font-bold text-gray-900">{categories.length}+</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {categories.length}+
+              </p>
               <p className="text-sm text-gray-500">Truck Categories</p>
             </div>
             <div>

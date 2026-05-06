@@ -37,7 +37,7 @@ export default function CTA() {
           <Link
             target="blank"
             rel="nonopener"
-            href="/company/contact"
+            href="/contact"
             className="inline-block bg-gray-900 text-white hover:bg-black transition duration-300 font-semibold px-8 py-3 rounded-lg shadow"
           >
             Contact Here

@@ -55,7 +55,7 @@ export default function Navbar() {
 
   const menu = [
     { name: "Trucks", href: "/trucks", icon: HiTruck },
-    { name: "Contact", href: "/company/contact", icon: HiPhone },
+    { name: "Contact", href: "/contact", icon: HiPhone },
     {
       name: "Company",
       icon: HiBuildingOffice,
