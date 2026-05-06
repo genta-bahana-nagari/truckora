@@ -32,7 +32,7 @@ export default function CTA() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <a
-            href="/reservation"
+            href="/trucks"
             className="inline-block bg-gray-900 text-white hover:bg-black transition duration-300 font-semibold px-8 py-3 rounded-lg shadow"
           >
             Reserve Now
