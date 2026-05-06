@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import {
   HiTruck,
-  HiCalendarDays,
   HiBuildingOffice,
   HiBars3,
   HiXMark,
@@ -56,15 +55,14 @@ export default function Navbar() {
 
   const menu = [
     { name: "Trucks", href: "/trucks", icon: HiTruck },
-    { name: "Reserve", href: "/reservation", icon: HiCalendarDays },
+    { name: "Contact", href: "/company/contact", icon: HiPhone },
     {
       name: "Company",
       icon: HiBuildingOffice,
       children: [
-        { name: "About Us", href: "/company/about" },
+        { name: "About", href: "/company/about" },
         { name: "Careers", href: "/company/careers" },
         { name: "Partners", href: "/company/partners" },
-        { name: "Contact", href: "/company/contact" },
         { name: "FAQ", href: "/company/faq" },
         { name: "Help", href: "/company/help" },
       ],
@@ -190,7 +188,7 @@ export default function Navbar() {
 
               {/* CTA Button */}
               <Link
-                href="/reservation"
+                href="/trucks"
                 className="ml-2 bg-gray-800 hover:bg-black text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:scale-105 active:scale-95"
               >
                 Book Now
@@ -292,7 +290,8 @@ export default function Navbar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </nav>      {/* Spacer to prevent content from hiding under fixed navbar */}
+      </nav>{" "}
+      {/* Spacer to prevent content from hiding under fixed navbar */}
     </>
   );
 }
