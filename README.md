@@ -60,7 +60,12 @@ truckora/
 │   │   │   │   └── isuzu-elf-box.jpg
 │   │   │   ├── kamaz
 │   │   │   │   └── kamaz-6520-dump.jpg
+│   │   │   ├── mercedes
+│   │   │   │   └── actros-tanker.jpg
+│   │   │   ├── scania
+│   │   │   │   └── scania-r500.jpg
 │   │   │   └── volvo
+│   │   │       ├── Volvo-Electric-FL-Gander-and-White.png
 │   │   │       └── volvo-fh16.jpg
 │   │   └── og-image.png
 │   ├── apple-touch-icon.png
@@ -78,8 +83,6 @@ truckora/
 │   │   │   │   │   ├── JobMotion.tsx
 │   │   │   │   │   └── page.tsx
 │   │   │   │   └── page.tsx
-│   │   │   ├── contact
-│   │   │   │   └── page.tsx
 │   │   │   ├── faq
 │   │   │   │   └── page.tsx
 │   │   │   ├── help
@@ -90,30 +93,29 @@ truckora/
 │   │   │   │   └── page.tsx
 │   │   │   └── terms
 │   │   │       └── page.tsx
-│   │   │
-│   │   ├── reservation
+│   │   ├── contact
 │   │   │   └── page.tsx
-│   │   │
+│   │   ├── reservation
+│   │   │   ├── [slug]
+│   │   │   │   └── page.tsx
+│   │   │   └── confirmation
+│   │   │       └── page.tsx
 │   │   ├── trucks
 │   │   │   ├── [slug]
 │   │   │   │   ├── TruckMotion.tsx
 │   │   │   │   └── page.tsx
 │   │   │   └── page.tsx
-│   │   │
 │   │   ├── layout.tsx
 │   │   ├── not-found.tsx
 │   │   ├── page.tsx
 │   │   ├── robots.ts
 │   │   └── sitemap.ts
-│   │   
 │   ├── components
 │   │   ├── global
 │   │   │   └── ProjectInfo.tsx
-│   │   │
 │   │   ├── layout
 │   │   │   ├── Footer.tsx
 │   │   │   └── Navbar.tsx
-│   │   │
 │   │   └── sections
 │   │       ├── about
 │   │       │   ├── CTA.tsx
@@ -121,31 +123,20 @@ truckora/
 │   │       │   ├── Impact.tsx
 │   │       │   ├── MissionVision.tsx
 │   │       │   ├── OurValues.tsx
-│   │       │   ├── Team.tsx
 │   │       │   └── WhatWeDo.tsx
-│   │       │
 │   │       ├── career
 │   │       │   ├── CTA.tsx
 │   │       │   ├── CultureValue.tsx
 │   │       │   ├── Hero.tsx
 │   │       │   ├── OpenPositions.tsx
 │   │       │   └── WhyWorkWithUs.tsx
-│   │       │
-│   │       ├── contact
-│   │       │   ├── CTA.tsx
-│   │       │   ├── Form.tsx
-│   │       │   ├── Header.tsx
-│   │       │   └── Info.tsx
-│   │       │
 │   │       ├── home
 │   │       │   ├── About.tsx
 │   │       │   ├── CTA.tsx
 │   │       │   ├── Featured.tsx
 │   │       │   ├── Hero.tsx
-│   │       │   ├── Testimonials.tsx
 │   │       │   ├── TruckCategories.tsx
 │   │       │   └── WhyChooseUs.tsx
-│   │       │
 │   │       ├── partner
 │   │       │   ├── Benefit.tsx
 │   │       │   ├── CTA.tsx
@@ -153,11 +144,9 @@ truckora/
 │   │       │   ├── HowItWorks.tsx
 │   │       │   ├── PartnerTypes.tsx
 │   │       │   └── WhoCanPartner.tsx
-│   │       │
 │   │       ├── reservation
 │   │       │   ├── ReservationForm.tsx
 │   │       │   └── TruckListing.tsx
-│   │       │
 │   │       └── trucks
 │   │           ├── TruckCard.tsx
 │   │           ├── TruckGrid.tsx
@@ -165,33 +154,28 @@ truckora/
 │   │           ├── TruckReviews.tsx
 │   │           ├── TruckSidebar.tsx
 │   │           └── TruckSpecs.tsx
-│   │
 │   ├── data
 │   │   ├── career
 │   │   │   └── positions.ts
-│   │   │   
 │   │   ├── misc
+│   │   │   ├── companyvalues.ts
 │   │   │   ├── features.ts
 │   │   │   ├── links.ts
+│   │   │   ├── services.ts
 │   │   │   └── stats.ts
-│   │   │   
 │   │   └── truck
 │   │       ├── category.ts
 │   │       ├── reviews.ts
 │   │       └── trucks.ts
-│   │   
 │   ├── lib
 │   │   └── site.ts
-│   │   
 │   ├── styles
 │   │   └── globals.css
-│   │   
 │   └── types
 │       ├── categoryType.ts
 │       ├── positionType.ts
 │       ├── reviewType.ts
 │       └── truckType.ts
-│
 ├── .env.example
 ├── .gitignore
 ├── LICENSE
