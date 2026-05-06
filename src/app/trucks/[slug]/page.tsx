@@ -247,7 +247,7 @@ export default function TruckPage({ params }: Props) {
                     Book This Truck
                   </Link>
                   <Link
-                    href="/company/contact"
+                    href="/contact"
                     className="flex-1 text-center border border-gray-300 px-6 py-3 rounded-xl font-semibold hover:bg-gray-50 hover:border-brand transition-all"
                   >
                     Contact Us

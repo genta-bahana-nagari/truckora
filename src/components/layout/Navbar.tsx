@@ -55,7 +55,6 @@ export default function Navbar() {
 
   const menu = [
     { name: "Trucks", href: "/trucks", icon: HiTruck },
-    { name: "Contact", href: "/company/contact", icon: HiPhone },
     {
       name: "Company",
       icon: HiBuildingOffice,
@@ -67,6 +66,7 @@ export default function Navbar() {
         { name: "Help", href: "/company/help" },
       ],
     },
+    { name: "Contact", href: "/contact", icon: HiPhone },
   ];
 
   const linkStyle = (href: string) =>

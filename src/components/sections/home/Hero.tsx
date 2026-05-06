@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
+import Link from "next/link";
 
 const slides = [
   {
@@ -87,12 +88,12 @@ export default function HeroSection() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                  <a
+                  <Link
                     href="/trucks"
                     className="border border-white/30 bg-white/10 backdrop-blur-md text-white px-4 py-2 text-sm md:px-5 md:text-base rounded-lg font-medium hover:bg-white hover:text-black transition duration-300"
                   >
                     Reserve Truck
-                  </a>
+                  </Link>
 
                   <a
                     href="trucks"

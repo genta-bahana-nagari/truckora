@@ -165,7 +165,7 @@ export default function About() {
               />
             </Link>
             <a
-              href="/company/contact"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 transition-all ml-3"
             >
               Contact Sales
