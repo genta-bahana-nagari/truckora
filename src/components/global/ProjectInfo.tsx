@@ -49,116 +49,125 @@ export default function ProjectInfo() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          onClick={handleClose}
         >
           <motion.div
-            className="bg-white w-full max-w-2xl rounded-md shadow-lg overflow-hidden"
+            className="bg-white w-full max-w-2xl rounded-lg shadow-2xl overflow-hidden"
             initial={{ opacity: 0, scale: 0.95, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
+            onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex justify-between items-center p-5 border-b">
-              <div className="flex items-center gap-2">
-                <IoInformationCircleOutline className="text-2xl" />
-                <h2 className="text-lg font-semibold">Project Information</h2>
+            <div className="flex justify-between items-center px-5 py-4 border-b border-gray-100">
+              <div className="flex items-center gap-2.5">
+                <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700">
+                  <IoInformationCircleOutline className="text-lg" />
+                </div>
+                <h2 className="text-base md:text-lg font-semibold text-gray-900">
+                  Project Information
+                </h2>
               </div>
               <button
                 onClick={handleClose}
-                className="text-gray-400 hover:text-gray-600 transition duration-300 cursor-pointer"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-all duration-300 cursor-pointer"
+                aria-label="Close"
               >
                 <IoClose className="text-xl" />
               </button>
             </div>
 
-            <div className="flex border-b text-sm">
+            <div className="flex border-b border-gray-100">
               {tabs.map((t) => (
                 <button
                   key={t.id}
                   onClick={() => setTab(t.id)}
-                  className={`cursor-pointer flex-1 py-3 text-center relative transition flex items-center justify-center gap-2 ${
+                  className={`cursor-pointer flex-1 py-3.5 text-center relative transition flex items-center justify-center gap-2 text-sm md:text-base ${
                     tab === t.id
                       ? "text-gray-900 font-medium"
                       : "text-gray-500 hover:text-gray-700"
                   }`}
                 >
                   <span
-                    className={`text-base transition-transform ${
-                      tab === t.id ? "scale-110" : "scale-100"
+                    className={`text-base transition-all duration-200 ${
+                      tab === t.id ? "text-gray-900" : "text-gray-500"
                     }`}
                   >
                     {t.icon}
                   </span>
-
                   <span>{t.label}</span>
-
                   {tab === t.id && (
                     <motion.div
                       layoutId="underline"
                       className="absolute bottom-0 left-0 right-0 h-0.5 bg-gray-900"
+                      transition={{ duration: 0.2 }}
                     />
                   )}
                 </button>
               ))}
             </div>
 
-            <div className="p-6 text-sm text-gray-600 h-55 overflow-y-auto">
+            <div className="p-5 md:p-6 max-h-[60vh] md:max-h-[70vh] overflow-y-auto">
               <AnimatePresence mode="wait">
                 {tab === "info" && (
                   <motion.div
                     key="info"
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.25 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2 }}
                     className="space-y-4"
                   >
-                    <h3 className="font-semibold text-gray-800">
-                      Fictional Project Notice
-                    </h3>
-                    <p>
-                      This website is a fictional project.{" "}
-                      <strong>Truckora</strong> is not a real business and is
-                      created solely for portfolio and educational purposes.
-                    </p>
-                    <p>
-                      Any resemblance to actual companies or services is
-                      coincidental. The design demonstrates modern web
-                      practices.
-                    </p>
-                    <p className="text-xs text-gray-500">
-                      Note: No real transactions are processed.
-                    </p>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 text-base mb-3">
+                        Fictional Project Notice
+                      </h3>
+                      <div className="space-y-3 text-gray-600 text-sm md:text-base leading-relaxed">
+                        <p>
+                          This website is a fictional project.{" "}
+                          <strong className="text-gray-800">Truckora</strong> is
+                          not a real business and is created solely for
+                          portfolio and educational purposes.
+                        </p>
+                        <p>
+                          Any resemblance to actual companies or services is
+                          coincidental. The design demonstrates modern web
+                          practices and component-based architecture.
+                        </p>
+                        <p className="text-xs md:text-sm text-gray-500">
+                          Note: No real transactions are processed on this
+                          platform.
+                        </p>
+                      </div>
+                    </div>
                   </motion.div>
                 )}
 
                 {tab === "about" && (
                   <motion.div
                     key="about"
-                    initial={{ opacity: 0, y: 10 }}
+                    initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    transition={{ duration: 0.25 }}
-                    className="space-y-5"
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.2 }}
+                    className="space-y-4"
                   >
                     <div>
-                      <h3 className="font-semibold text-gray-800">About</h3>
-                      <p className="italic">
-                        Truckora is a modern truck reservation platform that
+                      <h3 className="font-semibold text-gray-900 text-base mb-3">
+                        About Truckora
+                      </h3>
+                      <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                        Truckora is a truck reservation platform that
                         connects businesses and individuals with reliable trucks
-                        for transport, logistics, and moving needs. Our platform
-                        makes it simple to browse available trucks, compare
-                        options, and reserve the right vehicle in minutes.
-                        Whether you’re moving goods across the city or managing
-                        logistics operations, Truckora helps you get the job
-                        done efficiently.
+                        for transport, logistics, and moving needs.
                       </p>
-                      <p className="mt-2 italic">
-                        This project is created by{" "}
+                      <p className="text-gray-600 text-sm md:text-base leading-relaxed mt-3">
+                        This project is built by{" "}
                         <Link
                           target="_blank"
                           rel="noopener noreferrer"
                           href="https://www.github.com/genta-bahana-nagari"
-                          className="font-semibold underline"
+                          className="font-semibold text-gray-900 underline hover:text-gray-700 transition"
                         >
                           Genta Bahana Nagari
                         </Link>
@@ -167,7 +176,7 @@ export default function ProjectInfo() {
                           target="_blank"
                           rel="noopener noreferrer"
                           href="https://www.github.com/genta-bahana-nagari/truckora"
-                          className="font-semibold underline"
+                          className="font-semibold text-gray-900 underline hover:text-gray-700 transition"
                         >
                           here
                         </Link>
@@ -176,10 +185,10 @@ export default function ProjectInfo() {
                     </div>
 
                     <div>
-                      <h3 className="font-semibold text-gray-800">
+                      <h3 className="font-semibold text-gray-900 text-base mb-3">
                         Tech Stack
                       </h3>
-                      <div className="flex flex-wrap gap-2 mt-2">
+                      <div className="flex flex-wrap gap-2">
                         {[
                           "Next.js",
                           "React",
@@ -189,7 +198,7 @@ export default function ProjectInfo() {
                         ].map((tech) => (
                           <span
                             key={tech}
-                            className="px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 text-xs font-medium"
+                            className="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-700 text-xs md:text-sm font-medium"
                           >
                             {tech}
                           </span>
@@ -198,46 +207,57 @@ export default function ProjectInfo() {
                     </div>
 
                     <div>
-                      <h3 className="font-semibold text-gray-800">Features</h3>
-                      <div className="grid grid-cols-2 gap-4 mt-2 text-sm">
-                        <ul className="list-disc list-inside space-y-1">
-                          <li>Modern responsive UI</li>
-                          <li>Interactive truck browsing</li>
-                          <li>Smooth animations</li>
+                      <h3 className="font-semibold text-gray-900 text-base mb-3">
+                        Key Features
+                      </h3>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <ul className="space-y-2">
+                          {[
+                            "Modern responsive UI",
+                            "Interactive truck browsing",
+                            "Smooth animations",
+                          ].map((feature) => (
+                            <li
+                              key={feature}
+                              className="flex items-start gap-2 text-sm md:text-base text-gray-600"
+                            >
+                              <span className="text-gray-400 mt-1">•</span>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
                         </ul>
-                        <ul className="list-disc list-inside space-y-1">
-                          <li>Optimized UX & performance</li>
-                          <li>Dynamic modal & carousel system</li>
-                          <li>Scalable component architecture</li>
+                        <ul className="space-y-2">
+                          {[
+                            "Optimized UX & performance",
+                            "Dynamic modal & carousel",
+                            "Scalable component architecture",
+                          ].map((feature) => (
+                            <li
+                              key={feature}
+                              className="flex items-start gap-2 text-sm md:text-base text-gray-600"
+                            >
+                              <span className="text-gray-400 mt-1">•</span>
+                              <span>{feature}</span>
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
 
-                    <div>
-                      <h3 className="font-semibold text-gray-800">
-                        Additional Notes
-                      </h3>
-                      <p className="mt-1 text-sm text-gray-600">
-                        This project focuses on building a clean UI system with
-                        reusable components, smooth animations, and scalable
-                        architecture using modern frontend tools. Future
-                        improvements may include backend integration, real
-                        booking systems, and authentication features.
+                    <div className="pt-2 text-right">
+                      <p className="text-gray-400 text-xs italic">
+                        – Genta Bahana Nagari
                       </p>
                     </div>
-
-                    <p className="text-right text-gray-400 text-xs">
-                      – Genta Bahana Nagari
-                    </p>
                   </motion.div>
                 )}
               </AnimatePresence>
             </div>
 
-            <div className="p-4 border-t flex justify-end">
+            <div className="px-5 py-4 border-t border-gray-100 flex justify-end">
               <button
                 onClick={handleClose}
-                className="px-4 py-2 rounded-lg bg-gray-900 text-white hover:bg-gray-800"
+                className="px-5 py-2 rounded-xl bg-gray-900 text-white text-sm md:text-base font-medium hover:bg-gray-800 transition-all duration-300 cursor-pointer"
               >
                 Got it
               </button>
