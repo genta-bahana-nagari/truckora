@@ -7,9 +7,8 @@ import {
   FaHandsHelping,
   FaHeart,
 } from "react-icons/fa";
-import { values } from "@/data/misc/companyvalues";
+import { values } from "@/data/career/companyValues";
 
-// Map icons to values
 const iconMap = {
   Innovation: FaLightbulb,
   Integrity: FaShieldAlt,

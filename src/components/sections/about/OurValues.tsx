@@ -1,10 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { values } from "@/data/misc/companyvalues";
+import { values } from "@/data/misc/ourValues";
 import { FaShieldAlt, FaEye, FaRocket, FaHeart } from "react-icons/fa";
 
-// Optional: Map icons to values - remove if you prefer no icons
 const iconMap = {
   Reliability: FaShieldAlt,
   Transparency: FaEye,
