@@ -83,27 +83,30 @@ truckora/
 │   │   │   │   │   ├── JobMotion.tsx
 │   │   │   │   │   └── page.tsx
 │   │   │   │   └── page.tsx
-│   │   │   ├── faq
-│   │   │   │   └── page.tsx
 │   │   │   ├── help
 │   │   │   │   └── page.tsx
 │   │   │   ├── partners
 │   │   │   │   └── page.tsx
 │   │   │   ├── privacy-policy
 │   │   │   │   └── page.tsx
-│   │   │   └── terms
-│   │   │       └── page.tsx
+│   │   │   ├── terms
+│   │   │   │   └── page.tsx
+│   │   │   └── layout.tsx
 │   │   ├── contact
 │   │   │   └── page.tsx
 │   │   ├── reservation
 │   │   │   ├── [slug]
+│   │   │   │   ├── layout.tsx
 │   │   │   │   └── page.tsx
 │   │   │   └── confirmation
+│   │   │       ├── layout.tsx
 │   │   │       └── page.tsx
 │   │   ├── trucks
 │   │   │   ├── [slug]
 │   │   │   │   ├── TruckMotion.tsx
+│   │   │   │   ├── layout.tsx
 │   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
 │   │   │   └── page.tsx
 │   │   ├── layout.tsx
 │   │   ├── not-found.tsx
@@ -137,13 +140,14 @@ truckora/
 │   │       │   ├── Hero.tsx
 │   │       │   ├── TruckCategories.tsx
 │   │       │   └── WhyChooseUs.tsx
-│   │       ├── partner
-│   │       │   ├── Benefit.tsx
+│   │       ├── partners
 │   │       │   ├── CTA.tsx
 │   │       │   ├── Hero.tsx
 │   │       │   ├── HowItWorks.tsx
-│   │       │   ├── PartnerTypes.tsx
-│   │       │   └── WhoCanPartner.tsx
+│   │       │   ├── PartnerBenefits.tsx
+│   │       │   ├── PartnerBrands.tsx
+│   │       │   ├── Testimonials.tsx
+│   │       │   └── WhyPartner.tsx
 │   │       ├── reservation
 │   │       │   ├── ReservationForm.tsx
 │   │       │   └── TruckListing.tsx
@@ -156,13 +160,24 @@ truckora/
 │   │           └── TruckSpecs.tsx
 │   ├── data
 │   │   ├── career
+│   │   │   ├── benefits.ts
+│   │   │   ├── companyValues.ts
 │   │   │   └── positions.ts
+│   │   ├── help
+│   │   │   ├── categories.ts
+│   │   │   └── faqItems.ts
 │   │   ├── misc
-│   │   │   ├── companyvalues.ts
 │   │   │   ├── features.ts
 │   │   │   ├── links.ts
+│   │   │   ├── ourValues.ts
 │   │   │   ├── services.ts
 │   │   │   └── stats.ts
+│   │   ├── partners
+│   │   │   ├── benefits.ts
+│   │   │   ├── reasons.ts
+│   │   │   ├── steps.ts
+│   │   │   ├── testimonials.ts
+│   │   │   └── truckBrands.ts
 │   │   └── truck
 │   │       ├── category.ts
 │   │       ├── reviews.ts
