@@ -48,7 +48,6 @@ Built with **Next.js** 16 and **Tailwind CSS**, Truckora showcases a smooth busi
 ## 📁 Project Structure
 
 ```sh
-truckora/
 ├── public
 │   ├── images
 │   │   ├── carousel
@@ -89,7 +88,7 @@ truckora/
 │   │   │   │   └── page.tsx
 │   │   │   ├── privacy-policy
 │   │   │   │   └── page.tsx
-│   │   │   ├── terms
+│   │   │   ├── terms-of-service
 │   │   │   │   └── page.tsx
 │   │   │   └── layout.tsx
 │   │   ├── contact
