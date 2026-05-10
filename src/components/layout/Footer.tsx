@@ -195,9 +195,6 @@ export default function Footer() {
             <Link href="/company/terms-of-service" className="hover:text-white">
               Terms
             </Link>
-            <Link href="/company/cookies" className="hover:text-white">
-              Cookies
-            </Link>
           </div>
         </motion.div>
       </div>
