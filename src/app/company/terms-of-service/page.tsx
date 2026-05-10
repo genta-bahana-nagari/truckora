@@ -348,7 +348,7 @@ export default function TermsOfServicePage() {
               </Link>
               <span className="text-gray-300">•</span>
               <Link
-                href="/privacy"
+                href="/privacy-policy"
                 className="text-gray-500 hover:text-gray-700 transition"
               >
                 Privacy Policy

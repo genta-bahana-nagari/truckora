@@ -126,7 +126,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm mb-6">
               {[
                 { name: "Help Center", href: "/company/help" },
-                { name: "Terms of Service", href: "/company/terms" },
+                { name: "Terms of Service", href: "/company/terms-of-service" },
                 { name: "Privacy Policy", href: "/company/privacy-policy" },
               ].map((item, idx) => (
                 <li key={idx}>
@@ -192,7 +192,7 @@ export default function Footer() {
             <Link href="/company/privacy-policy" className="hover:text-white">
               Privacy
             </Link>
-            <Link href="/company/terms" className="hover:text-white">
+            <Link href="/company/terms-of-service" className="hover:text-white">
               Terms
             </Link>
             <Link href="/company/cookies" className="hover:text-white">

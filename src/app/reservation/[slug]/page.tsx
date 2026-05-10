@@ -383,7 +383,10 @@ export default function ReservationPage({ params }: Props) {
 
                 <p className="text-xs text-gray-400 text-center">
                   By confirming, you agree to our{" "}
-                  <Link href="/terms" className="underline hover:text-brand">
+                  <Link
+                    href="/company/terms-of-service"
+                    className="underline hover:text-brand"
+                  >
                     Terms & Conditions
                   </Link>{" "}
                   and{" "}
