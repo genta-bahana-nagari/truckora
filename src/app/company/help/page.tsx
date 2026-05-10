@@ -4,141 +4,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   FiTruck,
-  FiCreditCard,
-  FiClock,
-  FiShield,
-  FiUserCheck,
-  FiBookOpen,
   FiMessageCircle,
   FiArrowRight,
   FiMail,
   FiPhone,
-  FiCalendar,
 } from "react-icons/fi";
 
-const categories = [
-  {
-    title: "Getting Started",
-    icon: FiBookOpen,
-    color: "bg-blue-50 text-blue-600",
-    articles: [
-      { title: "How to create an account", link: "/help/create-account" },
-      { title: "How to browse available trucks", link: "/help/browse-trucks" },
-      {
-        title: "Understanding truck types & capacities",
-        link: "/help/truck-types",
-      },
-      {
-        title: "Setting up your business profile",
-        link: "/help/business-profile",
-      },
-    ],
-  },
-  {
-    title: "Making a Reservation",
-    icon: FiCalendar,
-    color: "bg-green-50 text-green-600",
-    articles: [
-      { title: "How to reserve a truck", link: "/help/reserve-truck" },
-      {
-        title: "Choosing pickup & drop-off locations",
-        link: "/help/locations",
-      },
-      { title: "Selecting rental duration", link: "/help/duration" },
-      {
-        title: "Special requests & instructions",
-        link: "/help/special-requests",
-      },
-    ],
-  },
-  {
-    title: "Payments & Pricing",
-    icon: FiCreditCard,
-    color: "bg-purple-50 text-purple-600",
-    articles: [
-      { title: "How pricing works", link: "/help/pricing" },
-      { title: "Accepted payment methods", link: "/help/payment-methods" },
-      { title: "Getting an invoice", link: "/help/invoice" },
-      { title: "Cancellation & refund policy", link: "/help/cancellation" },
-    ],
-  },
-  // {
-  //   title: "Managing Bookings",
-  //   icon: FiClock,
-  //   color: "bg-orange-50 text-orange-600",
-  //   articles: [
-  //     { title: "Viewing your reservations", link: "/help/view-bookings" },
-  //     { title: "Modifying a booking", link: "/help/modify-booking" },
-  //     { title: "Extending rental period", link: "/help/extend-booking" },
-  //     { title: "Canceling a reservation", link: "/help/cancel-booking" },
-  //   ],
-  // },
-  // {
-  //   title: "Account & Security",
-  //   icon: FiShield,
-  //   color: "bg-red-50 text-red-600",
-  //   articles: [
-  //     { title: "Resetting your password", link: "/help/reset-password" },
-  //     { title: "Updating account information", link: "/help/update-account" },
-  //     { title: "Payment security", link: "/help/security" },
-  //     { title: "Privacy settings", link: "/help/privacy" },
-  //   ],
-  // },
-  // {
-  //   title: "For Truck Owners",
-  //   icon: FiUserCheck,
-  //   color: "bg-teal-50 text-teal-600",
-  //   articles: [
-  //     { title: "Listing your truck", link: "/help/list-truck" },
-  //     { title: "Setting availability", link: "/help/availability" },
-  //     { title: "Managing reservations", link: "/help/manage-reservations" },
-  //     { title: "Understanding payouts", link: "/help/payouts" },
-  //   ],
-  // },
-];
-
-const faqItems = [
-  {
-    question: "How do I reserve a truck?",
-    answer:
-      "Simply browse available trucks on our platform, select your desired truck, choose pickup/drop-off locations and times, then complete the payment to confirm your reservation.",
-  },
-  {
-    question: "What happens if I need to cancel?",
-    answer:
-      "You can cancel up to 24 hours before pickup for a full refund. Cancellations within 24 hours may incur a fee. Check our cancellation policy for details.",
-  },
-  {
-    question: "How do I know the truck is available?",
-    answer:
-      "Our real-time availability system shows only trucks that are available for your selected dates. You'll see immediate confirmation upon booking.",
-  },
-  {
-    question: "What payment methods do you accept?",
-    answer:
-      "We accept credit/debit cards (Visa, Mastercard), bank transfers, and major digital wallets including GoPay, OVO, and Dana.",
-  },
-  {
-    question: "Can I extend my rental period?",
-    answer:
-      "Yes, you can extend your booking through your dashboard, subject to truck availability. Additional charges will apply for extended periods.",
-  },
-  {
-    question: "How do I contact the truck owner?",
-    answer:
-      "Once your booking is confirmed, you'll receive the owner's contact information. You can also message them through our platform.",
-  },
-  {
-    question: "What if the truck arrives late?",
-    answer:
-      "If the truck is delayed, you'll receive notifications. For delays exceeding 30 minutes, contact our support team for assistance.",
-  },
-  {
-    question: "Is my payment information secure?",
-    answer:
-      "Yes, we use industry-standard encryption and secure payment gateways. Your financial information is never stored on our servers.",
-  },
-];
+import { faqItems } from "@/data/help/faqItems";
+import { categories } from "@/data/help/categories";
 
 export default function page() {
   return (
@@ -153,7 +26,7 @@ export default function page() {
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
               How can we help you?
             </h1>
-            <p className="text-gray-300 text-base md:text-lg mb-8">
+            <p className="text-gray-300 text-base md:text-lg">
               Find answers about truck reservations, payments, bookings, and
               more
             </p>
