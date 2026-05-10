@@ -23,7 +23,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-neutral-900 text-gray-300 mt-20 relative overflow-hidden">
+    <footer className="bg-neutral-900 text-gray-300 relative overflow-hidden">
       <div className="absolute inset-0 bg-linear-to-br from-neutral-900 to-black pointer-events-none" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand/5 rounded-full blur-3xl pointer-events-none" />
 
