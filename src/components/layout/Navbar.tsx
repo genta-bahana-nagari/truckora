@@ -22,7 +22,6 @@ export default function Navbar() {
   const pathname = usePathname();
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -31,7 +30,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close desktop dropdown when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (window.innerWidth < 768) return;
@@ -62,7 +60,6 @@ export default function Navbar() {
         { name: "About", href: "/company/about" },
         { name: "Careers", href: "/company/careers" },
         { name: "Partners", href: "/company/partners" },
-        { name: "FAQ", href: "/company/faq" },
         { name: "Help", href: "/company/help" },
       ],
     },

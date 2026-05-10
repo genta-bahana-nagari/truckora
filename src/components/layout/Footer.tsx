@@ -24,14 +24,11 @@ export default function Footer() {
 
   return (
     <footer className="bg-neutral-900 text-gray-300 mt-20 relative overflow-hidden">
-      {/* Decorative background */}
       <div className="absolute inset-0 bg-linear-to-br from-neutral-900 to-black pointer-events-none" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-brand/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 pt-16 pb-8">
-        {/* Main footer content */}
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {/* Brand column */}
           <motion.div {...fadeInUp} transition={{ delay: 0 }}>
             <h2 className="text-2xl font-bold bg-linear-to-r from-white to-gray-400 bg-clip-text text-transparent mb-4">
               Truckora
@@ -72,7 +69,6 @@ export default function Footer() {
             </div>
           </motion.div>
 
-          {/* Quick Links */}
           <motion.div {...fadeInUp} transition={{ delay: 0.1 }}>
             <h3 className="text-white font-semibold text-lg mb-5 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-8 after:h-0.5 after:bg-brand after:rounded">
               Quick Links
@@ -99,7 +95,6 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Company */}
           <motion.div {...fadeInUp} transition={{ delay: 0.2 }}>
             <h3 className="text-white font-semibold text-lg mb-5 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-8 after:h-0.5 after:bg-brand after:rounded">
               Company
@@ -124,7 +119,6 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Support & Newsletter */}
           <motion.div {...fadeInUp} transition={{ delay: 0.3 }}>
             <h3 className="text-white font-semibold text-lg mb-5 relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-8 after:h-0.5 after:bg-brand after:rounded">
               Support
@@ -132,7 +126,6 @@ export default function Footer() {
             <ul className="space-y-3 text-sm mb-6">
               {[
                 { name: "Help Center", href: "/company/help" },
-                { name: "FAQ", href: "/company/faq" },
                 { name: "Terms of Service", href: "/company/terms" },
                 { name: "Privacy Policy", href: "/company/privacy-policy" },
               ].map((item, idx) => (
@@ -148,7 +141,6 @@ export default function Footer() {
               ))}
             </ul>
 
-            {/* Newsletter */}
             <div>
               <h4 className="text-white text-sm font-medium mb-2">
                 Subscribe for updates
@@ -178,7 +170,6 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
