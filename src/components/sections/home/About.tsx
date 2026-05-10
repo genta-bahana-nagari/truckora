@@ -63,7 +63,7 @@ export default function About() {
               businesses and individuals with reliable trucks for transport,
               logistics, and moving needs. Our platform makes it simple to
               browse available trucks, compare options, and reserve the right
-              vehicle in minutes. Whether you’re moving goods across the city or
+              vehicle in minutes. Whether you&apos;re moving goods across the city or
               managing logistics operations, Truckora helps you get the job done
               efficiently.
             </p>
