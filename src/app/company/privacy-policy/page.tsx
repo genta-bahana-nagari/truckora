@@ -15,7 +15,7 @@ export default function page() {
         </h1>
 
         <p className="mt-6 text-base sm:text-lg text-gray-600 leading-relaxed">
-          We’re working hard to bring this page to life. Please check back later
+          We`re working hard to bring this page to life. Please check back later
           for updates. Thank you for your patience.
         </p>
 
