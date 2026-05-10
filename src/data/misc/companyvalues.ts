@@ -1,6 +1,19 @@
 export const values = [
-  { title: "Reliability", description: "We ensure every truck reservation is dependable and on time." },
-  { title: "Transparency", description: "Clear pricing and information for every booking." },
-  { title: "Efficiency", description: "Streamlined platform to save time and simplify logistics." },
-  { title: "Customer Focus", description: "We put our users and their needs first." },
+  {
+    title: "Innovation",
+    description:
+      "We embrace creativity and forward-thinking solutions in logistics.",
+  },
+  {
+    title: "Integrity",
+    description: "Honesty and transparency guide every decision we make.",
+  },
+  {
+    title: "Collaboration",
+    description: "Teamwork drives our success and strengthens our community.",
+  },
+  {
+    title: "Customer Focus",
+    description: "We prioritize the needs of our clients above all else.",
+  },
 ];
