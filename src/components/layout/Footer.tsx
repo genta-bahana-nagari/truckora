@@ -189,6 +189,14 @@ export default function Footer() {
           </p>
 
           <div className="flex gap-6 text-xs text-gray-500">
+            <Link
+              href="https://profile.gentabahana.web.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white"
+            >
+              About Developer
+            </Link>
             <Link href="/company/privacy-policy" className="hover:text-white">
               Privacy
             </Link>
